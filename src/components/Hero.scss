@@ -1,0 +1,46 @@
+$off-white: #faf9f6;
+$black: #000000;
+$red: #dd0000;
+$yellow: #ffce00;
+
+.hero-container {
+  position: relative;
+  width: 100vw;
+  height: auto;
+  margin: 4.5rem 0 0 0;
+}
+
+.hero-content {
+  position: relative;
+  display: flex;
+  padding: 5rem 0 4rem 5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  color: $off-white;
+}
+
+.hero-content h1 {
+  max-width: 70vw;
+}
+
+.hero-content h4 {
+  margin-top: 3rem;
+  max-width: 50vw;
+}
+
+.hero-background {
+  width: 40vw;
+  height: 100%;
+  background: url('../assets/Hero_photo.jpg') center/cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.hero-button {
+  width: 12rem;
+  height: 4rem;
+  padding: 1.25rem 1.5rem;
+  margin-top: 2rem;
+}
