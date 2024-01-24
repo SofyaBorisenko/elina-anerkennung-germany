@@ -33,6 +33,21 @@ header nav a {
   line-height: 150%;
 }
 
+.submenu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.submenu-link {
+  overflow-wrap: break-word;
+  text-align: center;
+  max-width: 8rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 footer nav a {
   color: $off-white;
   text-decoration: none;
@@ -64,8 +79,16 @@ button {
   flex-shrink: 0;
 }
 
+.chevron-down {
+  background: #000000;
+  border: none;
+  box-shadow: none;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+
 .yellow-divider {
-  width: 100vw;
+  width: 100%;
   background: $yellow;
   height: 3rem;
 }
@@ -89,6 +112,7 @@ button {
     font-weight: 700;
     line-height: 120%;
     letter-spacing: 0.0725rem;
+    max-width: 16rem;
   }
 
   .highlighted-heading::after {
@@ -119,5 +143,9 @@ button {
     font-weight: 500;
     line-height: 120%;
     letter-spacing: -0.015px;
+  }
+
+  .aboutme-section p {
+    margin: 1rem 0;
   }
 }

@@ -60,7 +60,7 @@ const Footer = () => {
               </HStack>
             </nav>
             <nav>
-              <HStack>
+              <HStack spacing={24} pl={73.5}>
                 {socials.map((social, index) => (
                   <a href={social.url} key={index}>
                     <FontAwesomeIcon icon={social.icon} size='1x' />
