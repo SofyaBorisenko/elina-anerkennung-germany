@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Box, Button, HStack, IconButton, Image } from '@chakra-ui/react';
+import { Box, HStack, IconButton, Image } from '@chakra-ui/react';
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import Logo_header_desktop from '../assets/Logo_header_desktop.png';
 import '../App.scss';
@@ -27,7 +27,7 @@ const Header = () => {
   };
 
   const handleScroll = () => {
-    const currentScrollPos = window.pageYOffset;
+    const currentScrollPos = window.scrollY;
     setVisible(prevScrollPos > currentScrollPos);
     setPrevScrollPos(currentScrollPos);
   };

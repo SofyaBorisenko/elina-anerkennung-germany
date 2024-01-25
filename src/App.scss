@@ -145,7 +145,12 @@ button {
     letter-spacing: -0.015px;
   }
 
-  .aboutme-section p {
+  .aboutme p {
     margin: 1rem 0;
+  }
+
+  select {
+    width: 100%;
+    margin: 0;
   }
 }

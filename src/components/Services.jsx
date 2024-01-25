@@ -117,14 +117,15 @@ const ServiceCard = ({
 const Services = () => {
   return (
     <Box
-      className='services-section'
       alignItems='center'
       backgroundColor='#faf9f6'
       position='sticky'
       p='4rem'
     >
       <Flex justifyContent='center' pb='1rem'>
-        <h1 className='highlighted-heading'>Услуги</h1>
+        <h1 className='highlighted-heading' id='services-section'>
+          Услуги
+        </h1>
       </Flex>
       <VStack backgroundColor='#faf9f6' py='2rem'>
         <HStack justifyContent='space-between' spacing={24}>
@@ -138,14 +139,14 @@ const Services = () => {
           />
           <ServiceCard
             imageSrc={Service2}
-            title='Пакет “Сопровождение по апробации'
+            title='Пакет “Сопровождение по апробации”'
             description='Воспользуйтесь моей поддержкой и подайте заявку на апробацию самостоятельно, избегая затрат на услуги посреднических агентств и сэкономив ваши финансовые ресурсы.'
             cost='Стоимость: 250 евро'
             link='#service2'
           />
           <ServiceCard
             imageSrc={Service3}
-            title='Пакет “Цепляющий Bewerbung для немецких работодателей'
+            title='Пакет “Цепляющий Bewerbung для немецких работодателей”'
             description='Проанализируем ваши профессиональные цели, создадим резюме и сопроводительное письмо для поиска работы в Германии. Дам рекомендации по поиску вакансий, подготовке к интервью и отправке документов, а также поддержу при необходимости доработок.'
             cost='Стоимость: 150 евро'
             link='#service3'

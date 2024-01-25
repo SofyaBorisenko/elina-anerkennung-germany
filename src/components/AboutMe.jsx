@@ -4,11 +4,7 @@ import AboutMePhoto from '../assets/AboutMe_photo.jpg';
 
 const AboutMe = () => {
   return (
-    <Box
-      className='aboutme-section'
-      backgroundColor='#faf9f6'
-      position='sticky'
-    >
+    <Box className='aboutme' backgroundColor='#faf9f6' position='sticky'>
       <HStack alignItems='flex-start'>
         <Image
           src={AboutMePhoto}
@@ -19,7 +15,9 @@ const AboutMe = () => {
           objectFit='contain'
         ></Image>
         <VStack w='50%' p='4rem' alignItems='flex-start'>
-          <h1 className='highlighted-heading'>Обо мне</h1>
+          <h1 className='highlighted-heading' id='aboutme-section'>
+            Обо мне
+          </h1>
           <Text
             fontFamily='Manrope'
             fontSize='1.175rem'
