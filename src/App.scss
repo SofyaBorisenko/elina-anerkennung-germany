@@ -17,7 +17,8 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
   color: $black;
   margin: 0;
 }
@@ -43,7 +44,7 @@ header nav a {
   overflow-wrap: break-word;
   text-align: center;
   max-width: 8rem;
-  font-size: 0.875rem;
+  font-size: 0.825rem;
   font-weight: 600;
   cursor: pointer;
 }
@@ -69,22 +70,12 @@ footer p {
 }
 
 button {
-  background: $red;
-  border: 1px solid $off-white;
   border-radius: 10px;
   box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-}
-
-.chevron-down {
-  background: #000000;
-  border: none;
-  box-shadow: none;
-  margin: 0 0.5rem;
-  cursor: pointer;
 }
 
 .yellow-divider {
@@ -112,7 +103,7 @@ button {
     font-weight: 700;
     line-height: 120%;
     letter-spacing: 0.0725rem;
-    max-width: 16rem;
+    max-width: 30rem;
   }
 
   .highlighted-heading::after {
@@ -129,6 +120,16 @@ button {
   h1 {
     font-family: 'Cormorant Infant';
     font-size: 3.375rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.10875rem;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-family: 'Cormorant Infant';
+    font-size: 3rem;
     font-style: normal;
     font-weight: 600;
     line-height: 120%;

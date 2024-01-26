@@ -1,23 +1,17 @@
 import { Text, Box, Image, VStack, HStack, Heading } from '@chakra-ui/react';
 import '../App.scss';
-import AboutMePhoto from '../assets/AboutMe_photo.jpg';
+import './AboutMe.css';
+import '../assets/AboutMe_photo.jpg';
 
 const AboutMe = () => {
   return (
     <Box className='aboutme' backgroundColor='#faf9f6' position='sticky'>
-      <HStack alignItems='flex-start'>
-        <Image
-          src={AboutMePhoto}
-          align={'top'}
-          float={'left'}
-          w='50%'
-          h='auto'
-          objectFit='contain'
-        ></Image>
-        <VStack w='50%' p='4rem' alignItems='flex-start'>
-          <h1 className='highlighted-heading' id='aboutme-section'>
+      <HStack alignItems='flex-start' justifyContent='flex-end' gap='0px'>
+        <div className='aboutme-bg'></div>
+        <VStack w='50%' p='4rem' alignItems='flex-start' gap='0px'>
+          <h2 className='highlighted-heading' id='aboutme-section'>
             Обо мне
-          </h1>
+          </h2>
           <Text
             fontFamily='Manrope'
             fontSize='1.175rem'

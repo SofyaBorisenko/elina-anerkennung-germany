@@ -22,13 +22,15 @@ function Alert() {
       leastDestructiveRef={cancelRef}
       onClose={onClose}
     >
-      <AlertDialogOverlay>
+      <AlertDialogOverlay w='32rem'>
         <AlertDialogContent
           py={4}
-          backgroundColor={isSuccess ? '#81C784' : '#FF8A65'}
+          backgroundColor={isSuccess ? '#bcd4b9' : '#d44300'}
         >
-          <AlertDialogHeader fontSize='lg' fontWeight='bold'>
-            {isSuccess ? 'All good!' : 'Oops!'}
+          <AlertDialogHeader fontWeight='bold'>
+            {isSuccess
+              ? 'Получилось!'
+              : 'Что-то пошло не так. Попробуйте снова.'}
           </AlertDialogHeader>
           <AlertDialogBody>{message}</AlertDialogBody>
         </AlertDialogContent>

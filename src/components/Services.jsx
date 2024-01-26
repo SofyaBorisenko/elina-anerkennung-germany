@@ -31,7 +31,7 @@ const ServiceCard = ({
       direction='column'
       borderRadius='1.5rem'
       width='16.5rem'
-      height='36rem'
+      height='37rem'
       maxWidth='100%'
       background='#faf9f6'
       boxShadow='4px 4px 4px 0px rgba(0, 0, 0, 0.4)'
@@ -44,11 +44,11 @@ const ServiceCard = ({
         h='40%'
         objectFit='cover'
       />
-      <VStack py='1rem' px='1.5rem' h='60%'>
+      <VStack h='60%'>
         <CardBody>
           <VStack h='5rem' alignItems='flex-start'>
-            <Icon color='#dd0000' fontSize='1.25rem' py='0.5rem' />
-            <Heading
+            <Icon color='#dd0000' w='2rem' h='2rem' lineHeight='2rem' py='0.5rem' />
+            <Heading as='h5'
               fontFamily='Manrope'
               lineHeight='120%'
               fontWeight='700'
@@ -123,12 +123,12 @@ const Services = () => {
       p='4rem'
     >
       <Flex justifyContent='center' pb='1rem'>
-        <h1 className='highlighted-heading' id='services-section'>
+        <h2 className='highlighted-heading' id='services-section'>
           Услуги
-        </h1>
+        </h2>
       </Flex>
       <VStack backgroundColor='#faf9f6' py='2rem'>
-        <HStack justifyContent='space-between' spacing={24}>
+        <HStack justifyContent='space-between' spacing={'1.5rem'}>
           <ServiceCard
             imageSrc={Service1}
             title='Личные онлайн-консультации'
@@ -147,7 +147,7 @@ const Services = () => {
           <ServiceCard
             imageSrc={Service3}
             title='Пакет “Цепляющий Bewerbung для немецких работодателей”'
-            description='Проанализируем ваши профессиональные цели, создадим резюме и сопроводительное письмо для поиска работы в Германии. Дам рекомендации по поиску вакансий, подготовке к интервью и отправке документов, а также поддержу при необходимости доработок.'
+            description='Проанализируем ваши профессиональные цели, создадим резюме и сопроводительное письмо для поиска работы в Германии. Дам рекомендации по поиску вакансий, подготовке к интервью и отправке документов. Поддержу при необходимости доработок.'
             cost='Стоимость: 150 евро'
             link='#service3'
           />

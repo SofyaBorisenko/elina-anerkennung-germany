@@ -73,11 +73,11 @@ const Header = () => {
           justifyContent='space-between'
           alignItems='center'
           h='100%'
-          px={64}
+          px={'4rem'}
         >
           <Image src={Logo_header_desktop} w='20rem'></Image>
           <nav>
-            <HStack spacing={48} align='center'>
+            <HStack spacing={'3rem'} align='center'>
               <a href='#about-me' onClick={handleClick('aboutme-section')}>
                 Обо мне
               </a>
@@ -86,11 +86,22 @@ const Header = () => {
                   Услуги
                 </a>
                 <IconButton
-                  className='chevron-down'
+                  bg='#000000'
                   aria-label='Options'
-                  icon={<ChevronDownIcon />}
+                  icon={
+                    <ChevronDownIcon
+                      bg='#000000'
+                      color='#faf9f6'
+                      border='0px'
+                      boxShadow='none'
+                      ml='0.5rem'
+                    />
+                  }
                   fontSize='1.5rem'
                   onClick={handleSubmenuToggle}
+                  _hover={{
+                    background: '#000000',
+                  }}
                 />
                 {isSubmenuOpen && (
                   <Box
@@ -106,7 +117,7 @@ const Header = () => {
                     w='100%'
                   >
                     <nav>
-                      <HStack h='4.5rem' spacing={0} pr={64}>
+                      <HStack h='4.5rem' spacing='0.75rem' pr='4rem'>
                         {/* Submenu items */}
                         <a
                           href='#service1'

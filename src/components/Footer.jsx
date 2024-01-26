@@ -37,11 +37,11 @@ const Footer = () => {
   return (
     <Box backgroundColor='#000000' h='16rem'>
       <footer>
-        <VStack h='100%' px={64}>
+        <VStack h='100%' px='4rem'>
           <HStack p='3rem 0' w='100%' justifyContent='space-between'>
             <Image src={Logo_footer_desktop} w='10rem'></Image>
             <nav>
-              <HStack spacing={36} align='center'>
+              <HStack spacing='2.25rem' align='center'>
                 <a href='#about-me' onClick={handleClick('aboutme-section')}>
                   Обо мне
                 </a>
@@ -60,7 +60,7 @@ const Footer = () => {
               </HStack>
             </nav>
             <nav>
-              <HStack spacing={24} pl={73.5}>
+              <HStack spacing='1.5rem' pl='4.59375rem'>
                 {socials.map((social, index) => (
                   <a href={social.url} key={index}>
                     <FontAwesomeIcon icon={social.icon} size='1x' />
@@ -76,7 +76,7 @@ const Footer = () => {
           />
           <Flex
             margin='0 auto'
-            py={16}
+            py='1rem'
             color='white'
             justifyContent='center'
             alignItems='center'
