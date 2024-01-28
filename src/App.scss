@@ -34,21 +34,6 @@ header nav a {
   line-height: 150%;
 }
 
-.submenu {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.submenu-link {
-  overflow-wrap: break-word;
-  text-align: center;
-  max-width: 8rem;
-  font-size: 0.825rem;
-  font-weight: 600;
-  cursor: pointer;
-}
-
 footer nav a {
   color: $off-white;
   text-decoration: none;

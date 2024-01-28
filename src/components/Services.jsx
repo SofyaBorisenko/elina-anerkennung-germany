@@ -2,6 +2,7 @@ import {
   Card,
   CardBody,
   Heading,
+  IconButton,
   Image,
   VStack,
   HStack,
@@ -9,9 +10,14 @@ import {
   Flex,
   Text,
   Link,
-  Icon,
 } from '@chakra-ui/react';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
+import {
+  ConsultationIcon,
+  ApprobationIcon,
+  BewerbungIcon,
+  PersonalSupportIcon,
+} from './icons';
 import '../App.scss';
 import Service1 from '../assets/Service1.jpg';
 import Service2 from '../assets/Service2.jpg';
@@ -20,12 +26,24 @@ import Service4 from '../assets/Service4.jpg';
 
 const ServiceCard = ({
   imageSrc,
+  icon,
   title,
   description,
   duration,
   cost,
   link,
+  id,
 }) => {
+  const handleClick = (id) => (event) => {
+    event.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
   return (
     <Card
       direction='column'
@@ -46,9 +64,10 @@ const ServiceCard = ({
       />
       <VStack h='60%'>
         <CardBody>
-          <VStack h='5rem' alignItems='flex-start'>
-            <Icon color='#dd0000' w='2rem' h='2rem' lineHeight='2rem' py='0.5rem' />
-            <Heading as='h5'
+          <VStack h='5.5rem' alignItems='flex-start'>
+            {icon}
+            <Heading
+              as='h5'
               fontFamily='Manrope'
               lineHeight='120%'
               fontWeight='700'
@@ -59,15 +78,16 @@ const ServiceCard = ({
             </Heading>
           </VStack>
           <VStack
-            h='15rem'
+            h='14.5rem'
             alignItems='flex-start'
             justifyContent='space-between'
             gap='0'
           >
             <VStack
-              h='13rem'
+              h='11.5rem'
               alignItems='flex-start'
               justifyContent='space-between'
+              gap='0'
             >
               <Text
                 fontFamily='Manrope'
@@ -93,9 +113,8 @@ const ServiceCard = ({
                 {cost}
               </Text>
             </VStack>
-            <HStack alignItems='center' h='2rem'>
-              <Link
-                href={link}
+            <HStack alignItems='center' h='2rem' gap='0'>
+              <Text
                 fontFamily='Manrope'
                 lineHeight='140%'
                 fontWeight='700'
@@ -104,8 +123,16 @@ const ServiceCard = ({
                 textDecoration='none'
               >
                 Узнать подробнее
-              </Link>
-              <ArrowForwardIcon color='#dd0000' fontSize='1rem' />
+              </Text>
+              <IconButton
+                href={link}
+                onClick={handleClick(id)}
+                icon={<ArrowForwardIcon color='#dd0000' fontSize='1rem' />}
+                _hover={{
+                  background: '#faf9f6',
+                }}
+                boxShadow='none'
+              />
             </HStack>
           </VStack>
         </CardBody>
@@ -131,32 +158,40 @@ const Services = () => {
         <HStack justifyContent='space-between' spacing={'1.5rem'}>
           <ServiceCard
             imageSrc={Service1}
+            id='consultation-section'
+            icon={<ConsultationIcon />}
             title='Личные онлайн-консультации'
             description='Консультация доступна по следующим запросам: - Апробация - Процедура признания диплома в Германии - Поступление в штудиенколлег'
             duration='Длительность: 1 час'
             cost='Стоимость: 60 евро'
-            link='#service1'
+            link='#online-consultation'
           />
           <ServiceCard
             imageSrc={Service2}
+            id='approbation-section'
+            icon={<ApprobationIcon />}
             title='Пакет “Сопровождение по апробации”'
             description='Воспользуйтесь моей поддержкой и подайте заявку на апробацию самостоятельно, избегая затрат на услуги посреднических агентств и сэкономив ваши финансовые ресурсы.'
             cost='Стоимость: 250 евро'
-            link='#service2'
+            link='#approbation'
           />
           <ServiceCard
             imageSrc={Service3}
+            id='bewerbung-section'
+            icon={<BewerbungIcon />}
             title='Пакет “Цепляющий Bewerbung для немецких работодателей”'
             description='Проанализируем ваши профессиональные цели, создадим резюме и сопроводительное письмо для поиска работы в Германии. Дам рекомендации по поиску вакансий, подготовке к интервью и отправке документов. Поддержу при необходимости доработок.'
             cost='Стоимость: 150 евро'
-            link='#service3'
+            link='#bewerbung'
           />
           <ServiceCard
             imageSrc={Service4}
+            id='personalsupport-section'
+            icon={<PersonalSupportIcon />}
             title='Личное сопровождение'
             description='Индивидуальный подход, предоставляемый только после личной консультации.'
             cost='Стоимость: по запросу'
-            link='#service4'
+            link='#personal-support'
           />
         </HStack>
       </VStack>

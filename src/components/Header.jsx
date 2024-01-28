@@ -8,12 +8,6 @@ const Header = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const headerRef = useRef(null);
-  const submenuRef = useRef(null);
-  const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
-
-  const handleSubmenuToggle = () => {
-    setIsSubmenuOpen(!isSubmenuOpen);
-  };
 
   const handleClick = (id) => (event) => {
     event.preventDefault();
@@ -37,22 +31,6 @@ const Header = () => {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, [prevScrollPos, visible, handleScroll]);
-
-  useEffect(() => {
-    const handleOutsideClick = (event) => {
-      if (submenuRef.current && !submenuRef.current.contains(event.target)) {
-        setIsSubmenuOpen(false); // Close the submenu
-      }
-    };
-
-    // Attach the click event listener
-    document.body.addEventListener('click', handleOutsideClick);
-
-    // Cleanup: Remove the event listener when the component unmounts
-    return () => {
-      document.body.removeEventListener('click', handleOutsideClick);
-    };
-  }, [isSubmenuOpen]); // Listen for changes in isSubmenuOpen
 
   return (
     <header>
@@ -81,77 +59,11 @@ const Header = () => {
               <a href='#about-me' onClick={handleClick('aboutme-section')}>
                 Обо мне
               </a>
-              <div ref={submenuRef} className='submenu'>
-                <a href='#services' onClick={handleClick('services-section')}>
-                  Услуги
-                </a>
-                <IconButton
-                  bg='#000000'
-                  aria-label='Options'
-                  icon={
-                    <ChevronDownIcon
-                      bg='#000000'
-                      color='#faf9f6'
-                      border='0px'
-                      boxShadow='none'
-                      ml='0.5rem'
-                    />
-                  }
-                  fontSize='1.5rem'
-                  onClick={handleSubmenuToggle}
-                  _hover={{
-                    background: '#000000',
-                  }}
-                />
-                {isSubmenuOpen && (
-                  <Box
-                    display='flex'
-                    flexDirection='row'
-                    justifyContent='flex-end'
-                    alignItems='center'
-                    position='absolute'
-                    backgroundColor='#00000091'
-                    top='100%'
-                    left={0}
-                    zIndex={1}
-                    w='100%'
-                  >
-                    <nav>
-                      <HStack h='4.5rem' spacing='0.75rem' pr='4rem'>
-                        {/* Submenu items */}
-                        <a
-                          href='#service1'
-                          onClick={handleClick('consultation-section')}
-                          className='submenu-link'
-                        >
-                          Онлайн-консультация
-                        </a>
-                        <a
-                          href='#service2'
-                          onClick={handleClick('approbation-section')}
-                          className='submenu-link'
-                        >
-                          Сопровождение по апробации
-                        </a>
-                        <a
-                          href='#service3'
-                          onClick={handleClick('bewerbung-section')}
-                          className='submenu-link'
-                        >
-                          Цепляющий Bewerbung
-                        </a>
-                        <a
-                          href='#service4'
-                          onClick={handleClick('personalsupport-section')}
-                          className='submenu-link'
-                        >
-                          Личное сопровождение
-                        </a>
-                      </HStack>
-                    </nav>
-                  </Box>
-                )}
-              </div>
+
+              <a href='#services' onClick={handleClick('services-section')}>
+                Услуги
+              </a>
+
               <a href='#reviews' onClick={handleClick('reviews-section')}>
                 Отзывы
               </a>

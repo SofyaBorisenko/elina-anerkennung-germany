@@ -4,6 +4,16 @@ import './Hero.css';
 import '../assets/Hero_photo.jpg';
 
 const Hero = () => {
+  const handleClick = (id) => (event) => {
+    event.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
   return (
     <div>
       <Box mt='4.5rem' position='relative' color='#faf9f6'>
@@ -20,6 +30,8 @@ const Hero = () => {
             <br />с моей поддержкой!
           </h4>
           <Button
+            onClick={handleClick('consultation-section')}
+            link='#online-consultation'
             bg='#dd0000'
             color='#faf9f6'
             w='12rem'
@@ -27,6 +39,11 @@ const Hero = () => {
             p='1.25rem 1.5rem'
             mt='2rem'
             border='none'
+            _hover={{
+              background: '#faf9f6',
+              color: '#dd0000',
+              border: '2px solid #dd0000',
+            }}
           >
             Записаться
             <br />

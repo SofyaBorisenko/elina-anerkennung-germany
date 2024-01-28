@@ -60,89 +60,107 @@ const ConsultationCard = ({ title, listItems }) => (
   </Card>
 );
 
-const OnlineConsultation = () => (
-  <VStack
-    w='100%'
-    position='sticky'
-    bg='#faf9f6'
-    p='4rem 4rem 0 4rem'
-    justifyContent='center'
-    gap='0'
-  >
-    <VStack gap='0' alignItems='flex-start'>
-      <ConsultationIconBig />
-      <HStack alignItems='flex-start'>
-        <Heading
-          as='h3'
-          id='consultation-section'
-          pb='3rem'
-          fontFamily='Cormorant Garamond'
-          lineHeight='120%'
-          fontWeight='700'
-          fontSize='2rem'
-          color='#000000'
-        >
-          Личные онлайн-консультации.
-          <br /> Получите персональные рекомендации
-          <br /> по следующим вопросам:
-        </Heading>
-        <Flex>
-          <Image
-            src={PriceTag}
-            alt='Цена: 60 евро'
-            transform='translate(-6.5rem, -3rem) scale(0.8)'
-          />
-        </Flex>
-      </HStack>
-      <HStack spacing='2rem'>
-        {[
-          {
-            title: 'Апробация',
-            listItems: [
-              'Детальный разбор ваших документов',
-              'Тщательное изучение требований конкретного апробационного ведомства и проверка соответствия всех документов',
-              'Рекомендации по финансированию и план действий для подготовки к успешной подаче на апробацию',
-              'Обсуждение последующих шагов после подачи документов',
-            ],
-          },
-          {
-            title: 'Процедура признания диплома',
-            listItems: [
-              'Подробный анализ вашего диплома и его сопоставимость немецкой квалификации',
-              'Нахождение компетентного органа, отвечающего за признание вашей квалификации/диплома',
-              'Четкое объяснение процедуры признания',
-              'Успешное признание и обсуждение реальных шансов на трудоустройство',
-              'При неясности квалификации отправка запроса в компетентные органы',
-            ],
-          },
-          {
-            title: 'Поступление в штудиенколлег',
-            listItems: [
-              'Разбор ваших интересов и целей, чтобы подобрать наилучшую программу (курс)',
-              'Подробно рассмотрим требования и документы, необходимые для успешного поступления',
-              'Обсудим все этапы процесса подачи заявки в штудиенколлег, включая сроки, порядок и особенности конкретного учебного заведения',
-              'Разберем визовые вопросы',
-            ],
-          },
-        ].map((card, index) => (
-          <ConsultationCard key={index} {...card} />
-        ))}
-      </HStack>
-      <Text mt='6.5rem'>* 30.000 ₸ / 6.000 с</Text>
-    </VStack>
-    <Button
-      bg='#dd0000'
-      color='#faf9f6'
-      border-radius='0.9375rem'
-      w='14rem'
-      h='4rem'
-      p='1.25rem 1.5rem'
-      border='none'
-      transform='translate(0px, -4.5rem) scale(1)'
+const OnlineConsultation = () => {
+  const handleClick = (id) => (event) => {
+    event.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+  return (
+    <VStack
+      w='100%'
+      position='sticky'
+      bg='#faf9f6'
+      p='4rem 4rem 0 4rem'
+      justifyContent='center'
+      gap='0'
     >
-      Получить консультацию
-    </Button>
-  </VStack>
-);
+      <VStack gap='0' alignItems='flex-start' id='consultation-section'>
+        <ConsultationIconBig />
+        <HStack alignItems='flex-start'>
+          <Heading
+            as='h3'
+            pb='3rem'
+            fontFamily='Cormorant Garamond'
+            lineHeight='120%'
+            fontWeight='700'
+            fontSize='2rem'
+            color='#000000'
+          >
+            Личные онлайн-консультации.
+            <br /> Получите персональные рекомендации
+            <br /> по следующим вопросам:
+          </Heading>
+          <Flex>
+            <Image
+              src={PriceTag}
+              alt='Цена: 60 евро'
+              transform='translate(-6.5rem, -3rem) scale(0.8)'
+            />
+          </Flex>
+        </HStack>
+        <HStack spacing='2rem'>
+          {[
+            {
+              title: 'Апробация',
+              listItems: [
+                'Детальный разбор ваших документов',
+                'Тщательное изучение требований конкретного апробационного ведомства и проверка соответствия всех документов',
+                'Рекомендации по финансированию и план действий для подготовки к успешной подаче на апробацию',
+                'Обсуждение последующих шагов после подачи документов',
+              ],
+            },
+            {
+              title: 'Процедура признания диплома',
+              listItems: [
+                'Подробный анализ вашего диплома и его сопоставимость немецкой квалификации',
+                'Нахождение компетентного органа, отвечающего за признание вашей квалификации/диплома',
+                'Четкое объяснение процедуры признания',
+                'Успешное признание и обсуждение реальных шансов на трудоустройство',
+                'При неясности квалификации отправка запроса в компетентные органы',
+              ],
+            },
+            {
+              title: 'Поступление в штудиенколлег',
+              listItems: [
+                'Разбор ваших интересов и целей, чтобы подобрать наилучшую программу (курс)',
+                'Подробно рассмотрим требования и документы, необходимые для успешного поступления',
+                'Обсудим все этапы процесса подачи заявки в штудиенколлег, включая сроки, порядок и особенности конкретного учебного заведения',
+                'Разберем визовые вопросы',
+              ],
+            },
+          ].map((card, index) => (
+            <ConsultationCard key={index} {...card} />
+          ))}
+        </HStack>
+        <Text mt='6.5rem'>* 30.000 ₸ / 6.000 с</Text>
+      </VStack>
+      <Button
+        bg='#dd0000'
+        color='#faf9f6'
+        border-radius='0.9375rem'
+        w='14rem'
+        h='4rem'
+        p='1.25rem 1.5rem'
+        border='none'
+        transform='translate(0px, -4.5rem) scale(1)'
+        onClick={handleClick('contactme-section')}
+        link='#contact-me'
+        _hover={{
+          background: '#faf9f6',
+          color: '#dd0000',
+          border: '2px solid #dd0000',
+        }}
+      >
+        Получить консультацию
+      </Button>
+    </VStack>
+  );
+};
 
 export default OnlineConsultation;
