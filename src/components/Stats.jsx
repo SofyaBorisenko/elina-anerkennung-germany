@@ -1,4 +1,4 @@
-import { Text, Stat, VStack, HStack } from '@chakra-ui/react';
+import { Text, Stat, Flex, VStack } from '@chakra-ui/react';
 import '../App.scss';
 
 const statsData = [
@@ -30,12 +30,13 @@ const statsData = [
 ];
 
 const renderStats = (data) => (
-  <HStack
+  <Flex
+    flexDir={['column', 'row']}
     direction='row'
     justify='flex-start'
     align='flex-start'
-    spacing='3rem'
     alignSelf='stretch'
+    gap={['2rem', '3.5rem']}
   >
     {data.map((stat, index) => (
       <Stat key={index} borderLeft='3px solid #000000' pl='2rem'>
@@ -63,16 +64,16 @@ const renderStats = (data) => (
         </Text>
       </Stat>
     ))}
-  </HStack>
+  </Flex>
 );
 const Stats = () => {
   return (
     <VStack
-      p='4rem'
+      p={['4rem 1.25rem', '4rem']}
       direction='column'
       justify='flex-start'
       align='flex-start'
-      spacing='4rem'
+      spacing={['2rem', '3rem']}
       overflow='hidden'
       background='#ffce00'
     >
