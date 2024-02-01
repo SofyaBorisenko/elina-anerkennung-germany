@@ -307,7 +307,17 @@ const ContactMe = () => {
                   {formik.errors.comment}
                 </FormErrorMessage>
               </FormControl>
-              <Button {...buttonStyle} isLoading={isLoading}>
+              <Button
+                {...buttonStyle}
+                isLoading={isLoading}
+                border-radius='0.9375rem'
+                border='2px solid #dd0000'
+                _hover={{
+                  background: '#faf9f6',
+                  color: '#dd0000',
+                  border: '2px solid #dd0000',
+                }}
+              >
                 Отправить
               </Button>
             </VStack>

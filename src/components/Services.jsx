@@ -159,7 +159,7 @@ const Services = () => {
           <ServiceCard
             imageSrc={Service1}
             id='consultation-section'
-            icon={<ConsultationIcon />}
+            icon={<ConsultationIcon boxSize={8} />}
             title='Личные онлайн-консультации'
             description='Консультация доступна по следующим запросам: - Апробация - Процедура признания диплома в Германии - Поступление в штудиенколлег'
             duration='Длительность: 1 час'
@@ -169,7 +169,7 @@ const Services = () => {
           <ServiceCard
             imageSrc={Service2}
             id='approbation-section'
-            icon={<ApprobationIcon />}
+            icon={<ApprobationIcon boxSize={8} />}
             title='Пакет “Сопровождение по апробации”'
             description='Воспользуйтесь моей поддержкой и подайте заявку на апробацию самостоятельно, избегая затрат на услуги посреднических агентств и сэкономив ваши финансовые ресурсы.'
             cost='Стоимость: 250 евро'
@@ -178,7 +178,7 @@ const Services = () => {
           <ServiceCard
             imageSrc={Service3}
             id='bewerbung-section'
-            icon={<BewerbungIcon />}
+            icon={<BewerbungIcon boxSize={8} />}
             title='Пакет “Цепляющий Bewerbung для немецких работодателей”'
             description='Проанализируем ваши профессиональные цели, создадим резюме и сопроводительное письмо для поиска работы в Германии. Дам рекомендации по поиску вакансий, подготовке к интервью и отправке документов. Поддержу при необходимости доработок.'
             cost='Стоимость: 150 евро'
@@ -187,7 +187,7 @@ const Services = () => {
           <ServiceCard
             imageSrc={Service4}
             id='personalsupport-section'
-            icon={<PersonalSupportIcon />}
+            icon={<PersonalSupportIcon boxSize={8} />}
             title='Личное сопровождение'
             description='Индивидуальный подход, предоставляемый только после личной консультации.'
             cost='Стоимость: по запросу'

@@ -11,7 +11,7 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react';
-import { ApprobationIconBig } from './icons';
+import { ApprobationIcon } from './icons';
 import PriceTag from '../assets/price_tag_2.png';
 import '../assets/Approbation.JPG';
 import '../App.scss';
@@ -152,7 +152,7 @@ const Approbation = () => {
           <VStack gap='0' alignItems='flex-start' id='approbation-section'>
             <HStack gap='0' alignItems='flex-start'>
               <VStack gap='0' alignItems='flex-start'>
-                <ApprobationIconBig />
+                <ApprobationIcon boxSize={16} />
                 <Heading
                   as='h3'
                   pb='1rem'

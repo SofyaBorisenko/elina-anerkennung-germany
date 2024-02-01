@@ -10,6 +10,8 @@ import Services from './components/Services.jsx';
 import Benefits from './components/Benefits.jsx';
 import OnlineConsultation from './components/OnlineConsultation.jsx';
 import Approbation from './components/Approbation.jsx';
+import Bewerbung from './components/Bewerbung.jsx';
+import PersonalSupport from './components/PersonalSupport.jsx';
 import ContactMe from './components/ContactMe.jsx';
 import Alert from './components/Alert';
 import { ChakraProvider } from '@chakra-ui/react';
@@ -28,6 +30,8 @@ function App() {
             <Benefits />
             <OnlineConsultation id='consultation-section' />
             <Approbation id='approbation-section' />
+            <Bewerbung id='bewerbung-section' />
+            <PersonalSupport id='personalsupport-section' />
             <ContactMe id='contactme-section' />
             <Footer />
             <Alert />

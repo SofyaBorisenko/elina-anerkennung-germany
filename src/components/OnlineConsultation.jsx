@@ -13,7 +13,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import '../App.scss';
-import { ConsultationIconBig } from './icons';
+import { ConsultationIcon } from './icons';
 import PriceTag from '../assets/price_tag_1.png';
 
 const ConsultationCard = ({ title, listItems }) => (
@@ -81,11 +81,11 @@ const OnlineConsultation = () => {
       gap='0'
     >
       <VStack gap='0' alignItems='flex-start' id='consultation-section'>
-        <ConsultationIconBig />
+        <ConsultationIcon boxSize={16} />
         <HStack alignItems='flex-start'>
           <Heading
             as='h3'
-            pb='3rem'
+            pb='2rem'
             fontFamily='Cormorant Garamond'
             lineHeight='120%'
             fontWeight='700'
