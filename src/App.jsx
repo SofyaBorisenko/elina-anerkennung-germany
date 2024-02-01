@@ -14,6 +14,7 @@ import Bewerbung from './components/Bewerbung.jsx';
 import PersonalSupport from './components/PersonalSupport.jsx';
 import Reviews from './components/Reviews.jsx';
 import ContactMe from './components/ContactMe.jsx';
+import Sidebar from './components/Sidebar.jsx';
 import Alert from './components/Alert';
 import { ChakraProvider } from '@chakra-ui/react';
 
@@ -36,6 +37,7 @@ function App() {
             <Reviews id='reviews-section' />
             <ContactMe id='contactme-section' />
             <Footer />
+            <Sidebar />
             <Alert />
           </main>
         </AlertProvider>

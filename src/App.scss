@@ -67,11 +67,30 @@ button {
   width: 100%;
   background: $yellow;
   height: 3rem;
+  padding: 0;
 }
 
 /* Typography */
+.highlighted-heading {
+  position: relative;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 0.0725rem;
+}
+
+.highlighted-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: $yellow;
+  z-index: -1;
+}
+
 button {
-  color: $off-white;
   text-align: center;
   font-family: Manrope;
   font-size: 1rem;
@@ -87,63 +106,89 @@ p {
   color: $black;
 }
 
-/* Styles for 1280px+ screens (XLarge) */
-@media (min-width: 1280px) {
-  p {
-    font-size: '1rem';
-  }
+h1,
+h2 {
+  font-family: 'Cormorant Infant';
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: -0.10875rem;
+  text-transform: uppercase;
+}
 
-  .highlighted-heading {
-    position: relative;
-    font-style: italic;
-    font-weight: 700;
-    line-height: 120%;
-    letter-spacing: 0.0725rem;
-    max-width: 30rem;
-  }
+h4 {
+  font-family: Manrope;
+  font-style: normal;
+  letter-spacing: -0.015px;
+}
 
-  .highlighted-heading::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background-color: $yellow;
-    z-index: -1;
-  }
+/*Sidebar*/
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  background: $yellow;
+  visibility: hidden;
+}
+.sidebar-nav a {
+  color: $black;
+  text-decoration: none;
+  text-align: left;
+  font-family: Manrope;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+}
+.show-sidebar {
+  opacity: 0.95;
+  visibility: visible;
+  transition-property: opacity;
+  transition-duration: 1s;
+}
 
+/* Styles for mobile screens */
+@media (min-width: 0px) {
   h1 {
-    font-family: 'Cormorant Infant';
-    font-size: 3.375rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 120%;
-    letter-spacing: -0.10875rem;
-    text-transform: uppercase;
+    font-size: 2.5rem;
   }
 
   h2 {
-    font-family: 'Cormorant Infant';
-    font-size: 3rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 120%;
-    letter-spacing: -0.10875rem;
-    text-transform: uppercase;
+    font-size: 2.25rem;
+    margin-bottom: 1.25rem;
   }
 
   h4 {
-    font-family: Manrope;
-    font-size: 1.275rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 120%;
-    letter-spacing: -0.015px;
+    font-size: 1.15rem;
+    font-weight: 300;
+    line-height: 140%;
+  }
+}
+
+/* Styles for 1280px+ screens (XLarge) */
+@media (min-width: 1280px) {
+  button {
+    font-size: 1rem;
   }
 
-  .aboutme p {
-    margin: 1rem 0;
+  .highlighted-heading {
+    max-width: 30rem;
+  }
+
+  h1 {
+    font-size: 3.375rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h4 {
+    font-size: 1.275rem;
+    font-weight: 500;
+    line-height: 120%;
   }
 
   select {

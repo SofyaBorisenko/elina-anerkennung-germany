@@ -103,7 +103,7 @@ const PersonalSupport = () => {
           p='1.25rem 1.5rem'
           mt='3rem'
           border='none'
-          lineH='140%'
+          lineHeight='140%'
           onClick={handleClick('contactme-section')}
           link='#contact-me'
           _hover={{

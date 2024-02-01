@@ -7,3 +7,20 @@
   right: 0;
   z-index: -1;
 }
+
+.hero-bg-mob {
+  width: 100%;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.7) 0%,
+      rgba(255, 255, 255, 0.7) 100%
+    ),
+    url('../assets/Service1.jpg'), #faf9f6 50%;
+  background-position: center;
+  background-size: cover;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  padding: 1.25rem;
+}

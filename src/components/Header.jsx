@@ -1,13 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Box, HStack, IconButton, Image } from '@chakra-ui/react';
-import { ChevronDownIcon } from '@chakra-ui/icons';
-import Logo_header_desktop from '../assets/Logo_header_desktop.png';
+import { Box, Button, IconButton, Image, HStack } from '@chakra-ui/react';
+import { HamburgerIcon } from '@chakra-ui/icons';
+import { useGlobalContext } from './Context';
+import DesktopLogo from '../assets/Logo_header_desktop.png';
+import MobileLogo from '../assets/Logo_header_mobile.png';
 import '../App.scss';
 
 const Header = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const headerRef = useRef(null);
+  const { openSidebar } = useGlobalContext();
 
   const handleClick = (id) => (event) => {
     event.preventDefault();
@@ -34,7 +37,27 @@ const Header = () => {
 
   return (
     <header>
+      {/* Mobile Version */}
       <Box
+        display={{ base: 'block', md: 'none' }}
+        backgroundColor='#000000'
+        h='3.75rem'
+        px='0.5rem'
+      >
+        <HStack justifyContent='space-between' alignItems='center'>
+          <IconButton
+            bg='#000'
+            color='#faf9f6'
+            onClick={openSidebar}
+            icon={<HamburgerIcon />}
+            fontSize={'2.25rem'}
+          />
+          <Image src={MobileLogo} maxW='8.75rem'></Image>
+        </HStack>
+      </Box>
+      {/* Full-Screen Version */}
+      <Box
+        display={{ base: 'none', md: 'block' }}
         position='fixed'
         top={0}
         left={0}
@@ -53,7 +76,7 @@ const Header = () => {
           h='100%'
           px={'4rem'}
         >
-          <Image src={Logo_header_desktop} w='20rem'></Image>
+          <Image src={DesktopLogo} w='20rem'></Image>
           <nav>
             <HStack spacing={'3rem'} align='center'>
               <a href='#about-me' onClick={handleClick('aboutme-section')}>
