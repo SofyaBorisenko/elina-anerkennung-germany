@@ -80,8 +80,19 @@ button {
   line-height: 120%;
 }
 
+p {
+  font-family: 'Manrope';
+  line-height: '120%';
+  font-weight: '400';
+  color: $black;
+}
+
 /* Styles for 1280px+ screens (XLarge) */
 @media (min-width: 1280px) {
+  p {
+    font-size: '1rem';
+  }
+
   .highlighted-heading {
     position: relative;
     font-style: italic;

@@ -5,10 +5,8 @@ const AlertContext = createContext(undefined);
 export const AlertProvider = ({ children }) => {
   const [state, setState] = useState({
     isOpen: false,
-    // Type can be either "success" or "error"
     type: 'success',
-    // Message to be displayed, can be any string
-    message: 'Спасибо, что связались со мной! Я отвечу вам в ближайшее время.',
+    message: '',
   });
 
   return (

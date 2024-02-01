@@ -117,6 +117,7 @@ const PersonalSupport = () => {
           сопровождение
         </Button>
       </VStack>
+      <div className='yellow-divider'></div>
     </Box>
   );
 };

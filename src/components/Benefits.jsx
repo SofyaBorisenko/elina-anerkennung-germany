@@ -35,6 +35,7 @@ const BenefitItem = ({ title, description }) => (
 
 const Benefits = () => (
   <Box w='100%' position='sticky'>
+    <div className='yellow-divider'></div>
     <div className='benefits_background'>
       <Flex justifyContent='center' pb='3rem'>
         <h2 className='highlighted-heading'>Преимущества</h2>
