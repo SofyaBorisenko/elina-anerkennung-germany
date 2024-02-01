@@ -39,15 +39,15 @@ const renderStats = (data) => (
     gap={['2rem', '3.5rem']}
   >
     {data.map((stat, index) => (
-      <Stat key={index} borderLeft='3px solid #000000' pl='2rem'>
+      <Stat key={index} borderLeft='3px solid #000000' pl={['1rem', '2rem']}>
         <Text
           alignSelf='stretch'
           fontFamily='Manrope'
           fontWeight='800'
-          fontSize='1.75rem'
+          fontSize={['1.5rem', '1.75rem']}
           fontStyle='normal'
           lineHeight='100%'
-          my='1rem'
+          my={['0.5rem', '1rem']}
         >
           {stat.label}
         </Text>
@@ -55,10 +55,10 @@ const renderStats = (data) => (
           alignSelf='stretch'
           fontFamily='Manrope'
           fontWeight='800'
-          fontSize='1rem'
+          fontSize={['0.875rem', '1rem']}
           fontStyle='normal'
           lineHeight='150%'
-          my='1rem'
+          my={['0.5rem', '1rem']}
         >
           {stat.text}
         </Text>
@@ -66,6 +66,7 @@ const renderStats = (data) => (
     ))}
   </Flex>
 );
+
 const Stats = () => {
   return (
     <VStack
@@ -81,4 +82,5 @@ const Stats = () => {
     </VStack>
   );
 };
+
 export default Stats;
