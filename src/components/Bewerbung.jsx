@@ -3,6 +3,7 @@ import {
   Button,
   Card,
   CardBody,
+  Divider,
   Heading,
   List,
   ListItem,
@@ -82,6 +83,15 @@ const Bewerbung = () => {
       justifyContent='center'
       gap='0'
     >
+      <Divider
+        display={['block', 'none']}
+        orientation='horizontal'
+        w='90%'
+        h='1px'
+        mx='5%'
+        my='0'
+        bg='#000'
+      />
       <VStack
         p='4rem 4rem 0 4rem'
         alignItems='center'
@@ -90,7 +100,7 @@ const Bewerbung = () => {
         gap='0'
       >
         <Box pl='1rem'>
-          <BewerbungIcon boxSize={16} />
+          <BewerbungIcon boxSize={[14, 16]} />
         </Box>
         <HStack pl='8rem' gap='0'>
           <Heading
@@ -100,7 +110,7 @@ const Bewerbung = () => {
             fontFamily='Cormorant Garamond'
             lineHeight='120%'
             fontWeight='700'
-            fontSize='2rem'
+            fontSize={['1.75rem', '2rem']}
             color='#000000'
           >
             Пакет “Цепляющий Bewerbung
@@ -169,9 +179,10 @@ const Bewerbung = () => {
         <Button
           bg='#dd0000'
           color='#faf9f6'
-          border-radius='0.9375rem'
-          w='12rem'
-          h='4rem'
+          fontSize={['0.875rem', '1rem']}
+          borderRadius={['0.625rem', '0.9375rem']}
+          w={['10rem', '14rem']}
+          h={['3.5rem', '4rem']}
           p='1.25rem 1.5rem'
           border='none'
           transform='translate(0px, -4rem) scale(1)'

@@ -6,14 +6,14 @@ import './Benefits.css';
 
 const BenefitItem = ({ title, description }) => (
   <HStack alignItems='flex-start' gap='1rem'>
-    <CheckIcon color='#dd0000' fontSize='2rem' />
-    <VStack alignItems='flex-start' h='11rem' gap='1rem'>
+    <CheckIcon color='#dd0000' fontSize={['1.5rem', '2rem']} />
+    <VStack alignItems='flex-start' h={['auto', '11rem']} gap='1rem'>
       <Heading
         as='h6'
         fontFamily='Cormorant Garamond'
-        lineHeight='140%'
+        lineHeight={['120%', '140%']}
         fontWeight='700'
-        fontSize='1.75rem'
+        fontSize={['1.575rem', '1.75rem']}
         fontStyle='normal'
         color='#000000'
       >
@@ -35,13 +35,16 @@ const BenefitItem = ({ title, description }) => (
 
 const Benefits = () => (
   <Box w='100%' position='sticky'>
-    <div className='yellow-divider'></div>
-    <div className='benefits_background'>
-      <Flex justifyContent='center' pb='3rem'>
+    <Box display={['none', 'block']} className='yellow-divider'></Box>
+    <Box
+      className='benefits_background'
+      p={['4rem 1.25rem', '4rem 4rem 7rem 4rem']}
+    >
+      <Flex justifyContent='center' pb={['1rem', '3rem']}>
         <h2 className='highlighted-heading'>Преимущества</h2>
       </Flex>
-      <HStack gap='2rem'>
-        <VStack gap='2rem'>
+      <Flex flexDir={['column', 'row']} gap={['1rem', '2rem']}>
+        <VStack gap={['1rem', '2rem']}>
           {[
             {
               title: 'Индивидуальный подход',
@@ -62,7 +65,7 @@ const Benefits = () => (
             <BenefitItem key={index} {...item} />
           ))}
         </VStack>
-        <VStack gap='2rem'>
+        <VStack gap={['1rem', '2rem']}>
           {[
             {
               title: 'Детальный анализ',
@@ -83,9 +86,9 @@ const Benefits = () => (
             <BenefitItem key={index} {...item} />
           ))}
         </VStack>
-      </HStack>
-    </div>
-    <div className='yellow-divider'></div>
+      </Flex>
+    </Box>
+    <Box display={['none', 'block']} className='yellow-divider'></Box>
   </Box>
 );
 

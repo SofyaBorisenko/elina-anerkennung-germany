@@ -51,7 +51,7 @@ const TimelineItem = ({ number, title, items }) => {
                 fontFamily='Manrope'
                 lineHeight='130%'
                 fontWeight='700'
-                fontSize='0.875rem'
+                fontSize={['1rem', '0.875rem']}
                 color='#000000'
               >
                 {title}
@@ -62,9 +62,9 @@ const TimelineItem = ({ number, title, items }) => {
               stylePosition='inside'
               spacing={'0.15rem'}
               fontFamily='Manrope'
-              lineHeight='130%'
+              lineHeight={['140%', '130%']}
               fontWeight='400'
-              fontSize='0.825rem'
+              fontSize={['0.875rem', '0.825rem']}
               color='#000000'
             >
               {items.map((item, index) => (
@@ -106,7 +106,7 @@ const LastTimelineItem = ({ number, title, items }) => {
                 fontFamily='Manrope'
                 lineHeight='130%'
                 fontWeight='700'
-                fontSize='0.875rem'
+                fontSize={['1rem', '0.875rem']}
                 color='#000000'
               >
                 {title}
@@ -117,9 +117,9 @@ const LastTimelineItem = ({ number, title, items }) => {
               stylePosition='inside'
               spacing={'0.15rem'}
               fontFamily='Manrope'
-              lineHeight='130%'
+              lineHeight={['140%', '130%']}
               fontWeight='400'
-              fontSize='0.825rem'
+              fontSize={['0.875rem', '0.825rem']}
               color='#000000'
             >
               {items.map((item, index) => (
@@ -147,25 +147,55 @@ const Approbation = () => {
   };
   return (
     <Box w='100%' position='sticky'>
+      <Divider
+        display={['block', 'none']}
+        orientation='horizontal'
+        w='90%'
+        h='1px'
+        mx='5%'
+        my='0'
+        bg='#000'
+      />
       <div className='approbation_background'>
-        <VStack w='100%' position='sticky' justifyContent='center' gap='0'>
+        <VStack
+          w='100%'
+          position='sticky'
+          justifyContent='center'
+          gap='0'
+          p={['4rem 1.25rem', '4rem 4rem 0 4rem']}
+        >
           <VStack gap='0' alignItems='flex-start' id='approbation-section'>
             <HStack gap='0' alignItems='flex-start'>
               <VStack gap='0' alignItems='flex-start'>
-                <ApprobationIcon boxSize={16} />
+                <HStack
+                  w='100%'
+                  alignItems='center'
+                  justifyContent='space-between'
+                  gap='0'
+                >
+                  <ApprobationIcon boxSize={[14, 16]} />
+                  <Image
+                    display={['flex', 'none']}
+                    src={PriceTag}
+                    alt='Цена: 250 евро'
+                    transform='translate(0rem, 1rem) scale(0.7)'
+                    alignSelf='center'
+                  />
+                </HStack>
                 <Heading
                   as='h3'
                   pb='1rem'
                   fontFamily='Cormorant Garamond'
                   lineHeight='120%'
                   fontWeight='700'
-                  fontSize='2rem'
+                  fontSize={['1.75rem', '2rem']}
                   color='#000000'
                 >
                   Пакет “Сопровождение по апробации — от сбора до отправки”
                 </Heading>
               </VStack>
               <Image
+                display={['none', 'flex']}
                 src={PriceTag}
                 alt='Цена: 250 евро'
                 transform='translate(0rem, 0rem) scale(0.8)'
@@ -174,7 +204,7 @@ const Approbation = () => {
             </HStack>
             <Text
               fontFamily='Manrope'
-              lineHeight='120%'
+              lineHeight='140%'
               fontWeight='400'
               fontSize='1rem'
               color='#000000'
@@ -183,8 +213,17 @@ const Approbation = () => {
               продолжительность поддержки гарантирована до момента отправки всех
               необходимых документов на апробацию.
             </Text>
-            <HStack pt='2rem' spacing={'1rem'} alignItems='flex-start'>
-              <VStack alignItems='flex-start' w='50%'>
+            <Flex
+              flexDir={['column', 'row']}
+              pt='2rem'
+              gap={['1rem', '1rem']}
+              alignItems='flex-start'
+            >
+              <VStack
+                alignItems='flex-start'
+                w={['100%', '50%']}
+                gap={['1rem', '0.5rem']}
+              >
                 <TimelineItem
                   number='1'
                   title='Подготовительный этап'
@@ -225,16 +264,32 @@ const Approbation = () => {
                     'Подготовка дополнительных материалов по запросу',
                   ]}
                 />
-                <LastTimelineItem
-                  number='6'
-                  title='Присяжный переводчик и заполнение анкет'
-                  items={[
-                    'Предоставление контактов присяжного переводчика в Германии',
-                    'Перевод в кратчайшие сроки',
-                  ]}
-                />
+                <Flex display={['flex', 'none']}>
+                  <TimelineItem
+                    number='6'
+                    title='Присяжный переводчик и заполнение анкет'
+                    items={[
+                      'Предоставление контактов присяжного переводчика в Германии',
+                      'Перевод в кратчайшие сроки',
+                    ]}
+                  />
+                </Flex>
+                <Flex display={['none', 'flex']}>
+                  <LastTimelineItem
+                    number='6'
+                    title='Присяжный переводчик и заполнение анкет'
+                    items={[
+                      'Предоставление контактов присяжного переводчика в Германии',
+                      'Перевод в кратчайшие сроки',
+                    ]}
+                  />
+                </Flex>
               </VStack>
-              <VStack alignItems='flex-start' w='50%'>
+              <VStack
+                alignItems='flex-start'
+                w={['100%', '50%']}
+                gap={['1rem', '0.5rem']}
+              >
                 <TimelineItem
                   number='7'
                   title='Альтернатива рабочего контракта '
@@ -284,18 +339,22 @@ const Approbation = () => {
                   ]}
                 />
               </VStack>
-            </HStack>
-            <Text mt='6.5rem'>* 125.000 ₸ / 25.000 с</Text>
+            </Flex>
+            <Text display={['none', 'block']} mt='6.5rem'>
+              * 125.000 ₸ / 25.000 с
+            </Text>
           </VStack>
           <Button
             bg='#dd0000'
             color='#faf9f6'
-            border-radius='0.9375rem'
-            w='12rem'
-            h='4rem'
+            fontSize={['0.875rem', '1rem']}
+            borderRadius={['0.625rem', '0.9375rem']}
+            w={['10rem', '14rem']}
+            h={['3.5rem', '4rem']}
+            mt={['2rem', '0']}
             p='1.25rem 1.5rem'
             border='none'
-            transform='translate(0px, -4.5rem) scale(1)'
+            transform={['', 'translate(0px, -4.5rem) scale(1)']}
             onClick={handleClick('contactme-section')}
             link='#contact-me'
             _hover={{
@@ -306,6 +365,13 @@ const Approbation = () => {
           >
             Заказать пакет
           </Button>
+          <Text
+            display={['block', 'none']}
+            mt={['2rem', '0']}
+            fontSize={['0.75rem', '1rem']}
+          >
+            * 125.000 ₸ / 25.000 с
+          </Text>
         </VStack>
       </div>
     </Box>

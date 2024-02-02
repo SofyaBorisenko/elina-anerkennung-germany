@@ -20,16 +20,17 @@ const ConsultationCard = ({ title, listItems }) => (
   <Card
     direction='column'
     borderRadius='1.5rem'
-    width='18rem'
-    height='30.5rem'
+    width={['100%', '18rem']}
+    height={['auto', '30.5rem']}
     maxWidth='100%'
     background='#faf9f6'
-    boxShadow='4px 4px 4px 0px rgba(0, 0, 0, 0.4)'
-    border='1px solid #3f3f3fcc'
+    boxShadow={['none', '4px 4px 4px 0px rgba(0, 0, 0, 0.4)']}
+    border={['none', '1px solid #3f3f3fcc']}
   >
     <CardHeader
-      h='5.5rem'
+      h={['auto', '5.5rem']}
       maxW='15rem'
+      p='1.5rem'
       alignSelf='center'
       textAlign='center'
       fontFamily='Manrope'
@@ -42,13 +43,13 @@ const ConsultationCard = ({ title, listItems }) => (
     >
       {title}
     </CardHeader>
-    <CardBody p='0.5rem 1rem 1rem 1rem' h='25rem'>
+    <CardBody p={['0', '0.5rem 1rem 1rem 1rem']} h='25rem'>
       <UnorderedList
         spacing={3}
         textAlign='left'
         fontFamily='Manrope'
         lineHeight='130%'
-        fontWeight='300'
+        fontWeight={['400', '300']}
         fontSize='1rem'
         color='#000000'
       >
@@ -76,27 +77,40 @@ const OnlineConsultation = () => {
       w='100%'
       position='sticky'
       bg='#faf9f6'
-      p='4rem 4rem 0 4rem'
+      p={['4rem 1.25rem', '4rem 4rem 0 4rem']}
       justifyContent='center'
       gap='0'
     >
       <VStack gap='0' alignItems='flex-start' id='consultation-section'>
-        <ConsultationIcon boxSize={16} />
+        <HStack
+          w='100%'
+          alignItems='center'
+          justifyContent='space-between'
+          gap='0'
+        >
+          <ConsultationIcon boxSize={[14, 16]} />
+          <Image
+            display={['flex', 'none']}
+            src={PriceTag}
+            alt='Цена: 60 евро'
+            transform='translate(0, 2rem) scale(0.7)'
+          />
+        </HStack>
         <HStack alignItems='flex-start'>
           <Heading
             as='h3'
-            pb='2rem'
+            pb={['1rem', '2rem']}
             fontFamily='Cormorant Garamond'
             lineHeight='120%'
             fontWeight='700'
-            fontSize='2rem'
+            fontSize={['1.75rem', '2rem']}
             color='#000000'
           >
             Личные онлайн-консультации.
             <br /> Получите персональные рекомендации
             <br /> по следующим вопросам:
           </Heading>
-          <Flex>
+          <Flex display={['none', 'flex']}>
             <Image
               src={PriceTag}
               alt='Цена: 60 евро'
@@ -104,7 +118,7 @@ const OnlineConsultation = () => {
             />
           </Flex>
         </HStack>
-        <HStack spacing='2rem'>
+        <Flex flexDir={['column', 'row']} gap={['0.5rem', '2rem']}>
           {[
             {
               title: 'Апробация',
@@ -137,18 +151,22 @@ const OnlineConsultation = () => {
           ].map((card, index) => (
             <ConsultationCard key={index} {...card} />
           ))}
-        </HStack>
-        <Text mt='6.5rem'>* 30.000 ₸ / 6.000 с</Text>
+        </Flex>
+        <Text display={['none', 'block']} mt='6.5rem'>
+          * 30.000 ₸ / 6.000 с
+        </Text>
       </VStack>
       <Button
         bg='#dd0000'
         color='#faf9f6'
-        border-radius='0.9375rem'
-        w='14rem'
-        h='4rem'
+        fontSize={['0.875rem', '1rem']}
+        borderRadius={['0.625rem', '0.9375rem']}
+        w={['13rem', '14rem']}
+        h={['3.5rem', '4rem']}
+        mt={['2rem', '0']}
         p='1.25rem 1.5rem'
         border='none'
-        transform='translate(0px, -4.5rem) scale(1)'
+        transform={['', 'translate(0px, -4.5rem) scale(1)']}
         onClick={handleClick('contactme-section')}
         link='#contact-me'
         _hover={{
@@ -159,6 +177,13 @@ const OnlineConsultation = () => {
       >
         Получить консультацию
       </Button>
+      <Text
+        display={['block', 'none']}
+        mt={['2rem', '0']}
+        fontSize={['0.75rem', '1rem']}
+      >
+        * 30.000 ₸ / 6.000 с
+      </Text>
     </VStack>
   );
 };

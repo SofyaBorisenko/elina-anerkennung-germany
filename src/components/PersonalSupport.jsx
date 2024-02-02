@@ -38,14 +38,14 @@ const PersonalSupport = () => {
       <VStack p='4rem' justifyContent='center' gap='0'>
         <VStack gap='0' alignItems='center' id='personalsupport-section'>
           <VStack gap='0' alignItems='center'>
-            <PersonalSupportIcon boxSize={16} />
+            <PersonalSupportIcon boxSize={[14, 16]} />
             <Heading
               as='h3'
               pb='1rem'
               fontFamily='Cormorant Garamond'
               lineHeight='120%'
               fontWeight='700'
-              fontSize='2rem'
+              fontSize={['1.75rem', '2rem']}
               color='#000000'
             >
               Личное сопровождение
@@ -97,9 +97,10 @@ const PersonalSupport = () => {
         <Button
           bg='#dd0000'
           color='#faf9f6'
-          border-radius='0.9375rem'
-          w='12rem'
-          h='4rem'
+          fontSize={['0.875rem', '1rem']}
+          borderRadius={['0.625rem', '0.9375rem']}
+          w={['10rem', '14rem']}
+          h={['3.5rem', '4rem']}
           p='1.25rem 1.5rem'
           mt='3rem'
           border='none'
