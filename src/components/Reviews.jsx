@@ -29,70 +29,62 @@ const Reviews = () => {
     });
   };
 
+  const buttonStyle = {
+    height: ['1.5rem', '2.5rem'],
+    minWidth: ['1.5rem', '2.5rem'],
+    background: '#FFCE00',
+    border: '2px solid #FFCE00',
+    borderRadius: '3.125rem',
+    color: '#000106',
+    fontSize: ['0.575rem', '1rem'],
+    padding: ['0.25rem', '0.625rem'],
+    justifyContent: 'center',
+    alignItems: 'center',
+    _hover: {
+      background: '#faf9f6',
+      color: '#FFCE00',
+      border: '2px solid #FFCE00',
+    },
+  };
+
   return (
     <Box
       w='100%'
       position='sticky'
       bg='#faf9f6'
-      p='4rem'
+      p={['4rem 1.25rem', '4rem']}
       alignItems='center'
       justifyContent='center'
       id='reviews-section'
       gap='0'
     >
       <HStack justifyContent='space-between' alignItems='center' gap='0'>
-        <Button
-          size='lg'
-          bg='#FFCE00'
-          borderColor='#FFCE00'
-          borderRadius={'3.125rem'}
-          color='#000106'
-          fontSize='1.25rem'
-          p='0.625rem'
-          justifyContent='center'
-          alignItems='center'
-          onClick={prevPerson}
-          _hover={{
-            background: '#faf9f6',
-            color: '#FFCE00',
-            border: '2px solid #FFCE00',
-          }}
-        >
+        <Button {...buttonStyle} onClick={prevPerson}>
           <FaArrowLeft />
         </Button>
-        <VStack maxW='65%' gap='0'>
-          <HStack maxW='8rem'>
+        <VStack maxW='75%' gap='0'>
+          <HStack maxW={['6rem', '8rem']}>
             <FaStar color='#dd0000' />
             <FaStar color='#dd0000' />
             <FaStar color='#dd0000' />
             <FaStar color='#dd0000' />
             <FaStar color='#dd0000' />
           </HStack>
-          <Text py='2rem' textAlign='center'>
+          <Text py='2rem' textAlign='center' fontSize={['0.875rem', '1rem']}>
             {text}
           </Text>
-          <Text fontWeight='700'>{name}</Text>
-          <Text className='location' fontWeight='600'>
+          <Text fontSize={['0.875rem', '1rem']} fontWeight='700'>
+            {name}
+          </Text>
+          <Text
+            fontSize={['0.875rem', '1rem']}
+            className='location'
+            fontWeight='600'
+          >
             {location}
           </Text>
         </VStack>
-        <Button
-          size='lg'
-          bg='#FFCE00'
-          borderColor='#FFCE00'
-          borderRadius={'3.125rem'}
-          color='#000106'
-          fontSize='1.25rem'
-          p='0.625rem'
-          justifyContent='center'
-          alignItems='center'
-          onClick={nextPerson}
-          _hover={{
-            background: '#faf9f6',
-            color: '#FFCE00',
-            border: '2px solid #FFCE00',
-          }}
-        >
+        <Button {...buttonStyle} onClick={nextPerson}>
           <FaArrowRight />
         </Button>
       </HStack>

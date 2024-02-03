@@ -6,12 +6,12 @@ import AboutMePhoto from '../assets/AboutMe_photo.jpg';
 const AboutMe = () => {
   const textStyle = {
     fontFamily: 'Manrope',
-    fontWeight: ['300', '400'],
+    fontWeight: '400',
     fontStyle: 'normal',
     lineHeight: ['140%', '130%'],
     mx: '0',
     my: ['0.4rem', '0.75rem'],
-    fontSize: ['0.875rem', '1rem'],
+    fontSize: '1rem',
   };
   return (
     <Box className='aboutme' backgroundColor='#faf9f6' position='sticky'>

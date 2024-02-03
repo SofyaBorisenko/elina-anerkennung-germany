@@ -4,6 +4,7 @@ import {
   Card,
   CardBody,
   Divider,
+  Flex,
   Heading,
   List,
   ListItem,
@@ -21,14 +22,14 @@ const BewerbungCard = ({ title, listItems }) => {
     <Card
       direction='column'
       borderRadius='1.5rem'
-      width='33.3%'
-      height='16rem'
+      width={['100%', '33.3%']}
+      height={['auto', '16rem']}
       p='1rem'
       background='#faf9f6'
       boxShadow='4px 4px 4px 0px rgba(0, 0, 0, 0.4)'
       border='1px solid #3f3f3fcc'
     >
-      <CardBody>
+      <CardBody p={['1rem', '1.25rem']}>
         <VStack alignItems='flex-start' gap='1rem'>
           <HStack alignItems='center' gap='1rem'>
             <FontAwesomeIcon icon={faSquareCheck} color='#dd0000' size='2xl' />
@@ -93,19 +94,26 @@ const Bewerbung = () => {
         bg='#000'
       />
       <VStack
-        p='4rem 4rem 0 4rem'
+        p={['4rem 1.25rem', '4rem 4rem 0 4rem']}
         alignItems='center'
         justifyContent='center'
         id='bewerbung-section'
         gap='0'
       >
-        <Box pl='1rem'>
+        <HStack
+          w='100%'
+          alignItems='center'
+          justifyContent={['space-between', 'center']}
+          gap='0'
+        >
           <BewerbungIcon boxSize={[14, 16]} />
-        </Box>
-        <HStack pl='8rem' gap='0'>
+          <PriceTag3 boxSize={28} transform='translate(0rem, 1rem)' />
+        </HStack>
+        <HStack pl={['0', '8rem']} gap='0'>
           <Heading
             as='h3'
-            textAlign='center'
+            textAlign={['left', 'center']}
+            maxW='30rem'
             pb='2rem'
             fontFamily='Cormorant Garamond'
             lineHeight='120%'
@@ -113,14 +121,19 @@ const Bewerbung = () => {
             fontSize={['1.75rem', '2rem']}
             color='#000000'
           >
-            Пакет “Цепляющий Bewerbung
-            <br /> для немецких работодателей или <br />
-            для подачи на duales Studium”
+            Пакет “Цепляющий Bewerbung для немецких работодателей или для подачи
+            на duales Studium”
           </Heading>
-          <PriceTag3 boxSize={32} transform='translate(0rem, -5rem)' />
+          <Flex display={['none', 'flex']}>
+            <PriceTag3 boxSize={32} transform='translate(0rem, -5rem)' />
+          </Flex>
         </HStack>
-        <VStack spacing={'1.5rem'} alignItems={'flex-start'}>
-          <HStack spacing={'1.5rem'} justifyContent='center'>
+        <VStack spacing={['1rem', '1.5rem']} alignItems={'flex-start'}>
+          <Flex
+            flexDir={['column', 'row']}
+            gap={['1rem', '1.5rem']}
+            justifyContent='center'
+          >
             {[
               {
                 title: 'Анализ и консультация',
@@ -146,8 +159,12 @@ const Bewerbung = () => {
             ].map((card, index) => (
               <BewerbungCard key={index} {...card} />
             ))}
-          </HStack>
-          <HStack spacing={'1.5rem'} justifyContent='center'>
+          </Flex>
+          <Flex
+            flexDir={['column', 'row']}
+            gap={['1rem', '1.5rem']}
+            justifyContent='center'
+          >
             {[
               {
                 title: 'Индивидуальные рекомендации',
@@ -173,8 +190,10 @@ const Bewerbung = () => {
             ].map((card, index) => (
               <BewerbungCard key={index} {...card} />
             ))}
-          </HStack>
-          <Text mt='5rem'>* 75.000 ₸ / 15.000 с</Text>
+          </Flex>
+          <Text display={['none', 'block']} mt='5rem'>
+            * 75.000 ₸ / 15.000 с
+          </Text>
         </VStack>
         <Button
           bg='#dd0000'
@@ -183,9 +202,10 @@ const Bewerbung = () => {
           borderRadius={['0.625rem', '0.9375rem']}
           w={['10rem', '14rem']}
           h={['3.5rem', '4rem']}
+          mt={['2rem', '0']}
           p='1.25rem 1.5rem'
           border='none'
-          transform='translate(0px, -4rem) scale(1)'
+          transform={['', 'translate(0px, -4rem) scale(1)']}
           onClick={handleClick('contactme-section')}
           link='#contact-me'
           _hover={{
@@ -196,6 +216,13 @@ const Bewerbung = () => {
         >
           Заказать пакет
         </Button>
+        <Text
+          display={['block', 'none']}
+          mt={['2rem', '0']}
+          fontSize={['0.75rem', '1rem']}
+        >
+          * 75.000 ₸ / 15.000 с
+        </Text>
       </VStack>
     </Box>
   );

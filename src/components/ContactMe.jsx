@@ -65,6 +65,7 @@ const ContactMe = () => {
   }, [response]);
 
   const labelStyle = {
+    mb: ['0.25rem', '0.5rem'],
     color: '#000000',
     fontFamily: 'Manrope',
     fontStyle: 'normal',
@@ -75,7 +76,7 @@ const ContactMe = () => {
 
   const inputStyle = {
     variant: 'outline',
-    w: '15.5rem',
+    w: ['100%', '15.5rem'],
     h: '2rem',
     p: '0.5rem',
     backgroundColor: '#faf9f6',
@@ -119,7 +120,8 @@ const ContactMe = () => {
     fontSize: '0.75rem',
     fontWeight: '300',
     lineHeight: '150%',
-    width: '32rem',
+    maxWidth: ['100%', '32rem'],
+    width: ['', '32rem'],
     height: '2rem',
   };
 
@@ -135,7 +137,8 @@ const ContactMe = () => {
   const buttonStyle = {
     backgroundColor: '#dd0000',
     color: '#faf9f6',
-    border: 'none',
+    borderRadius: '0.9375rem',
+    border: '2px solid #dd0000',
     type: 'submit',
     width: '8.75rem',
     height: '2.5rem',
@@ -146,21 +149,27 @@ const ContactMe = () => {
   const [resize, setResize] = React.useState('vertical');
 
   return (
-    <Box backgroundColor='#ffce00' p={'4rem'} position='sticky'>
+    <Box
+      backgroundColor='#ffce00'
+      p={['4rem 1.25rem', '4rem']}
+      position='sticky'
+    >
       <VStack alignItems='center' gap='0'>
         <Heading
           as='h3'
           pb='1rem'
           fontFamily='Cormorant Garamond'
-          fontSize='3.375rem'
+          fontSize={['2.25rem', '3.375rem']}
           fontWeight='700'
           id='contactme-section'
         >
           Свяжитесь со мной
         </Heading>
         <Text
-          p='0 0 1rem 0'
+          maxW='75%'
+          pb='1rem'
           color='#000000'
+          textAlign='center'
           fontFamily='Manrope'
           fontStyle='normal'
           fontSize='0.875rem'
@@ -169,10 +178,15 @@ const ContactMe = () => {
         >
           Есть вопрос или хотите заказать консультацию? Смело обращайтесь!
         </Text>
-        <Flex pt='1.5rem'>
+        <Flex pt='1.5rem' mx={['1rem', '0']}>
           <form onSubmit={formik.handleSubmit}>
             <VStack spacing='0.5rem'>
-              <HStack spacing='1rem' alignItems='flex-start'>
+              <Flex
+                flexDir={['column', 'row']}
+                w={['100%', '']}
+                gap={['0.5rem', '1rem']}
+                alignItems='flex-start'
+              >
                 <FormControl
                   isInvalid={
                     !!formik.errors.firstName && formik.touched.firstName
@@ -213,8 +227,13 @@ const ContactMe = () => {
                     {formik.errors.lastName}
                   </FormErrorMessage>
                 </FormControl>
-              </HStack>
-              <HStack spacing='1rem' alignItems='flex-start'>
+              </Flex>
+              <Flex
+                flexDir={['column', 'row']}
+                w={['100%', '']}
+                gap={['0.5rem', '1rem']}
+                alignItems='flex-start'
+              >
                 <FormControl
                   isInvalid={!!formik.errors.email && formik.touched.email}
                 >
@@ -253,7 +272,7 @@ const ContactMe = () => {
                     {formik.errors.phone}
                   </FormErrorMessage>
                 </FormControl>
-              </HStack>
+              </Flex>
               <Flex>
                 <FormControl
                   isInvalid={formik.touched.type && formik.errors.type}
@@ -310,8 +329,6 @@ const ContactMe = () => {
               <Button
                 {...buttonStyle}
                 isLoading={isLoading}
-                border-radius='0.9375rem'
-                border='2px solid #dd0000'
                 _hover={{
                   background: '#faf9f6',
                   color: '#dd0000',

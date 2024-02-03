@@ -55,7 +55,7 @@ const renderStats = (data) => (
           alignSelf='stretch'
           fontFamily='Manrope'
           fontWeight='800'
-          fontSize={['0.875rem', '1rem']}
+          fontSize='1rem'
           fontStyle='normal'
           lineHeight='150%'
           my={['0.5rem', '1rem']}

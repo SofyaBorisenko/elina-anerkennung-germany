@@ -1,11 +1,19 @@
-import { Box, Divider, HStack, VStack, Image, Flex } from '@chakra-ui/react';
+import {
+  Box,
+  Divider,
+  HStack,
+  VStack,
+  Image,
+  Flex,
+  Text,
+} from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebook,
   faLinkedin,
   faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
-import Logo_footer_desktop from '../assets/Logo_footer_desktop.png';
+import Logo from '../assets/Logo_header_mobile.png';
 import '../App.scss';
 
 const socials = [
@@ -35,13 +43,24 @@ const Footer = () => {
     }
   };
   return (
-    <Box backgroundColor='#000000' h='16rem'>
+    <Box backgroundColor='#000000' h={['auto', '16rem']}>
       <footer>
-        <VStack h='100%' px='4rem'>
-          <HStack p='3rem 0' w='100%' justifyContent='space-between'>
-            <Image src={Logo_footer_desktop} w='10rem'></Image>
+        <VStack h='auto' px={['1.25rem', '4rem']}>
+          <Flex
+            flexDir={['column', 'row']}
+            p='3rem 0'
+            w='100%'
+            gap='3rem'
+            alignItems='center'
+            justifyContent='space-between'
+          >
+            <Image src={Logo} w={['12.5rem', '10rem']}></Image>
             <nav>
-              <HStack spacing='2.25rem' align='center'>
+              <Flex
+                flexDir={['column', 'row']}
+                gap={['1rem', '2.25rem']}
+                align='center'
+              >
                 <a href='#about-me' onClick={handleClick('aboutme-section')}>
                   Обо мне
                 </a>
@@ -57,10 +76,10 @@ const Footer = () => {
                 >
                   Связаться со мной
                 </a>
-              </HStack>
+              </Flex>
             </nav>
             <nav>
-              <HStack spacing='1.5rem' pl='4.59375rem'>
+              <HStack spacing={['1rem', '1.5rem']} pl={['0', '4.59375rem']}>
                 {socials.map((social, index) => (
                   <a href={social.url} key={index}>
                     <FontAwesomeIcon icon={social.icon} size='1x' />
@@ -68,7 +87,7 @@ const Footer = () => {
                 ))}
               </HStack>
             </nav>
-          </HStack>
+          </Flex>
           <Divider
             orientation='horizontal'
             height='1.5px'
@@ -81,7 +100,11 @@ const Footer = () => {
             justifyContent='center'
             alignItems='center'
           >
-            <p>© 2023 Elina Anerkennung Germany. All rights reserved.</p>
+            <Text textAlign='center' mb='1rem'>
+              © 2023 Elina Anerkennung Germany.
+              <br />
+              All rights reserved.
+            </Text>
           </Flex>
         </VStack>
       </footer>

@@ -35,7 +35,7 @@ const PersonalSupport = () => {
         my='0'
         bg='#000'
       />
-      <VStack p='4rem' justifyContent='center' gap='0'>
+      <VStack p={['4rem 1.25rem', '4rem']} justifyContent='center' gap='0'>
         <VStack gap='0' alignItems='center' id='personalsupport-section'>
           <VStack gap='0' alignItems='center'>
             <PersonalSupportIcon boxSize={[14, 16]} />
@@ -51,10 +51,10 @@ const PersonalSupport = () => {
               Личное сопровождение
             </Heading>
             <Text
-              w='50%'
+              w={['100%', '50%']}
               textAlign={'center'}
               fontFamily='Manrope'
-              lineHeight='120%'
+              lineHeight={['140%', '120%']}
               fontWeight='400'
               fontSize='1rem'
               color='#000000'
@@ -64,8 +64,19 @@ const PersonalSupport = () => {
               формируется после тщательного анализа вашей ситуации.
             </Text>
           </VStack>
-          <HStack alignItems='center' justifyContent='center' pt='2rem'>
-            <VStack w='20%' justifyContent='center'>
+          <Image
+            src={PersonalSupportImage}
+            w={['100%', '20rem']}
+            px={['0', '3rem']}
+            py={['2rem', '0']}
+            display={['block', 'none']}
+          />
+          <HStack
+            gap={['1rem', '']}
+            alignItems='center'
+            justifyContent='center'
+          >
+            <VStack w={['50%', '20%']} justifyContent='center'>
               <FontAwesomeIcon icon={faSquareCheck} color='#dd0000' size='xl' />
               <Heading as='h6' fontSize={'1rem'} textAlign='center'>
                 Поступление в штудиенколлег
@@ -78,8 +89,14 @@ const PersonalSupport = () => {
                 1500 евро
               </Text>
             </VStack>
-            <Image src={PersonalSupportImage} w='20rem' px='3rem' />
-            <VStack w='20%' justifyContent='center'>
+            <Image
+              src={PersonalSupportImage}
+              w='20rem'
+              px='3rem'
+              mt='2rem'
+              display={['none', 'block']}
+            />
+            <VStack w={['50%', '20%']} justifyContent='center'>
               <FontAwesomeIcon icon={faSquareCheck} color='#dd0000' size='xl' />
               <Heading as='h6' fontSize={'1rem'} textAlign='center'>
                 Трудоустройство в Германии
@@ -99,10 +116,10 @@ const PersonalSupport = () => {
           color='#faf9f6'
           fontSize={['0.875rem', '1rem']}
           borderRadius={['0.625rem', '0.9375rem']}
-          w={['10rem', '14rem']}
+          w={['16rem', '18rem']}
           h={['3.5rem', '4rem']}
           p='1.25rem 1.5rem'
-          mt='3rem'
+          mt={['2rem', '3rem']}
           border='none'
           lineHeight='140%'
           onClick={handleClick('contactme-section')}
@@ -113,9 +130,7 @@ const PersonalSupport = () => {
             border: '2px solid #dd0000',
           }}
         >
-          Приобрести
-          <br />
-          сопровождение
+          Приобрести сопровождение
         </Button>
       </VStack>
       <div className='yellow-divider'></div>
