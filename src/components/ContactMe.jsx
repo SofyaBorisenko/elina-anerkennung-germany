@@ -64,8 +64,30 @@ const ContactMe = () => {
     }
   }, [response]);
 
+  const headingStyle = {
+    as: 'h3',
+    maxW: ['100%', '66%', '100%'],
+    paddingBottom: '1rem',
+    fontFamily: 'Cormorant Garamond',
+    fontSize: ['2.25rem', null, '3.375rem'],
+    fontWeight: '700',
+    id: 'contactme-section',
+  };
+
+  const textStyle = {
+    maxW: ['100%', '66%', '100%'],
+    paddingBottom: '1rem',
+    color: '#000000',
+    textAlign: 'center',
+    fontFamily: 'Manrope',
+    fontStyle: 'normal',
+    fontSize: '0.875rem',
+    fontWeight: '600',
+    lineHeight: '100%',
+  };
+
   const labelStyle = {
-    mb: ['0.25rem', '0.5rem'],
+    mb: ['0.25rem', null, '0.5rem'],
     color: '#000000',
     fontFamily: 'Manrope',
     fontStyle: 'normal',
@@ -76,7 +98,7 @@ const ContactMe = () => {
 
   const inputStyle = {
     variant: 'outline',
-    w: ['100%', '15.5rem'],
+    w: ['100%', null, '15.5rem'],
     h: '2rem',
     p: '0.5rem',
     backgroundColor: '#faf9f6',
@@ -120,12 +142,12 @@ const ContactMe = () => {
     fontSize: '0.75rem',
     fontWeight: '300',
     lineHeight: '150%',
-    maxWidth: ['100%', '32rem'],
-    width: ['', '32rem'],
+    maxWidth: ['100%', null, '32rem'],
+    width: ['100%', null, '32rem'],
     height: '2rem',
   };
 
-  const textStyle = {
+  const textAreaStyle = {
     border: '1px solid #3f3f3fcc',
     borderRadius: '0.25rem',
     backgroundColor: '#FAF9F6',
@@ -144,47 +166,33 @@ const ContactMe = () => {
     height: '2.5rem',
     marginTop: '1.5rem',
     padding: '1.25rem 1.5rem',
+    _hover: {
+      background: '#faf9f6',
+      color: '#dd0000',
+      border: '2px solid #dd0000',
+    },
   };
 
   const [resize, setResize] = React.useState('vertical');
 
   return (
-    <Box
-      backgroundColor='#ffce00'
-      p={['4rem 1.25rem', '4rem']}
-      position='sticky'
-    >
+    <Box backgroundColor='#ffce00' p={['4rem 1.25rem', '4rem 2rem', '4rem']}>
       <VStack alignItems='center' gap='0'>
-        <Heading
-          as='h3'
-          pb='1rem'
-          fontFamily='Cormorant Garamond'
-          fontSize={['2.25rem', '3.375rem']}
-          fontWeight='700'
-          id='contactme-section'
-        >
-          Свяжитесь со мной
-        </Heading>
-        <Text
-          maxW='75%'
-          pb='1rem'
-          color='#000000'
-          textAlign='center'
-          fontFamily='Manrope'
-          fontStyle='normal'
-          fontSize='0.875rem'
-          fontWeight='600'
-          lineHeight='100%'
-        >
+        <Heading {...headingStyle}>Свяжитесь со мной</Heading>
+        <Text {...textStyle}>
           Есть вопрос или хотите заказать консультацию? Смело обращайтесь!
         </Text>
-        <Flex pt='1.5rem' mx={['1rem', '0']}>
+        <Flex
+          maxW={['100%', '66%', '100%']}
+          pt='1.5rem'
+          mx={['1rem', null, '0']}
+        >
           <form onSubmit={formik.handleSubmit}>
             <VStack spacing='0.5rem'>
               <Flex
-                flexDir={['column', 'row']}
-                w={['100%', '']}
-                gap={['0.5rem', '1rem']}
+                flexDir={['column', null, 'row']}
+                w={['100%', null, null]}
+                gap={['0.5rem', null, '1rem']}
                 alignItems='flex-start'
               >
                 <FormControl
@@ -229,9 +237,9 @@ const ContactMe = () => {
                 </FormControl>
               </Flex>
               <Flex
-                flexDir={['column', 'row']}
-                w={['100%', '']}
-                gap={['0.5rem', '1rem']}
+                flexDir={['column', null, 'row']}
+                w={['100%', null, '']}
+                gap={['0.5rem', null, '1rem']}
                 alignItems='flex-start'
               >
                 <FormControl
@@ -318,7 +326,7 @@ const ContactMe = () => {
                   placeholder='Введите сообщение...'
                   variant='outline'
                   _placeholder={placeholderStyle}
-                  {...textStyle}
+                  {...textAreaStyle}
                   resize={resize}
                   {...formik.getFieldProps('comment')}
                 />
@@ -326,15 +334,7 @@ const ContactMe = () => {
                   {formik.errors.comment}
                 </FormErrorMessage>
               </FormControl>
-              <Button
-                {...buttonStyle}
-                isLoading={isLoading}
-                _hover={{
-                  background: '#faf9f6',
-                  color: '#dd0000',
-                  border: '2px solid #dd0000',
-                }}
-              >
+              <Button {...buttonStyle} isLoading={isLoading}>
                 Отправить
               </Button>
             </VStack>

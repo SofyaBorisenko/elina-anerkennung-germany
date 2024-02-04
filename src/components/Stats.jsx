@@ -31,23 +31,26 @@ const statsData = [
 
 const renderStats = (data) => (
   <Flex
-    flexDir={['column', 'row']}
-    direction='row'
+    flexDir={['column', null, 'row']}
     justify='flex-start'
     align='flex-start'
     alignSelf='stretch'
-    gap={['2rem', '3.5rem']}
+    gap={['2rem', null, '3.5rem']}
   >
     {data.map((stat, index) => (
-      <Stat key={index} borderLeft='3px solid #000000' pl={['1rem', '2rem']}>
+      <Stat
+        key={index}
+        borderLeft='3px solid #000000'
+        pl={['1rem', null, '2rem']}
+      >
         <Text
           alignSelf='stretch'
           fontFamily='Manrope'
           fontWeight='800'
-          fontSize={['1.5rem', '1.75rem']}
+          fontSize={['1.5rem', null, '1.75rem']}
           fontStyle='normal'
           lineHeight='100%'
-          my={['0.5rem', '1rem']}
+          my={['0.5rem', null, '1rem']}
         >
           {stat.label}
         </Text>
@@ -58,7 +61,7 @@ const renderStats = (data) => (
           fontSize='1rem'
           fontStyle='normal'
           lineHeight='150%'
-          my={['0.5rem', '1rem']}
+          my={['0.5rem', null, '1rem']}
         >
           {stat.text}
         </Text>
@@ -70,11 +73,11 @@ const renderStats = (data) => (
 const Stats = () => {
   return (
     <VStack
-      p={['4rem 1.25rem', '4rem']}
+      p={['4rem 1.25rem', '4rem 2rem', '4rem']}
       direction='column'
       justify='flex-start'
       align='flex-start'
-      spacing={['2rem', '3rem']}
+      spacing={['2rem', null, '3rem']}
       overflow='hidden'
       background='#ffce00'
     >

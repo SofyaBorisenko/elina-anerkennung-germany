@@ -20,8 +20,8 @@ const people = [
   {
     id: 4,
     name: 'Айгуль',
-    location: 'Pavlodar',
-    text: "I recently invested in a high-quality DSLR camera, and the image stabilization technology in the lens has exceeded my expectations. Even with shaky hands, I'm now able to capture incredibly sharp and steady shots, which has taken my photography to the next level.",
+    location: 'г. Павлодар',
+    text: 'Отзыв 4',
   },
 ];
 

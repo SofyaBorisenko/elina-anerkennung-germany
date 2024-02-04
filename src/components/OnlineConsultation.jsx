@@ -20,37 +20,38 @@ const ConsultationCard = ({ title, listItems }) => (
   <Card
     direction='column'
     borderRadius='1.5rem'
-    width={['100%', '18rem']}
-    height={['auto', '30.5rem']}
+    width={['100%', null, '18rem']}
+    height={['auto', null, '31rem']}
     maxWidth='100%'
+    padding='1.25rem'
     background='#faf9f6'
-    boxShadow={['none', '4px 4px 4px 0px rgba(0, 0, 0, 0.4)']}
-    border={['none', '1px solid #3f3f3fcc']}
+    boxShadow={['none', null, '4px 4px 4px 0px rgba(0, 0, 0, 0.4)']}
+    border={['none', null, '1px solid #3f3f3fcc']}
   >
     <CardHeader
-      h={['auto', '5.5rem']}
+      h={['auto', null, '5.5rem']}
       maxW='15rem'
-      p='1.5rem'
+      p='1.25rem'
       alignSelf='center'
       textAlign='center'
       fontFamily='Manrope'
       lineHeight='130%'
       fontWeight='700'
-      fontSize='1.125rem'
+      fontSize={['1.25rem', null, '1rem']}
       color='#000000'
       textDecoration='underline solid #dd0000 2px'
       textUnderlineOffset='4px'
     >
       {title}
     </CardHeader>
-    <CardBody p={['0', '0.5rem 1rem 1rem 1rem']} h='25rem'>
+    <CardBody p={['0', null, '0.5rem 1rem 1rem 1rem']} h='25rem'>
       <UnorderedList
         spacing={3}
         textAlign='left'
         fontFamily='Manrope'
         lineHeight='130%'
-        fontWeight={['400', '300']}
-        fontSize='1rem'
+        fontWeight={['400', null, '300']}
+        fontSize={['1rem', null, '0.875rem']}
         color='#000000'
       >
         {listItems.map((item, index) => (
@@ -77,7 +78,7 @@ const OnlineConsultation = () => {
       w='100%'
       position='sticky'
       bg='#faf9f6'
-      p={['4rem 1.25rem', '4rem 4rem 0 4rem']}
+      p={['4rem 1.25rem', '4rem 2rem', '4rem 4rem 0 4rem']}
       justifyContent='center'
       gap='0'
     >
@@ -88,29 +89,29 @@ const OnlineConsultation = () => {
           justifyContent='space-between'
           gap='0'
         >
-          <ConsultationIcon boxSize={[14, 16]} />
+          <ConsultationIcon boxSize={[14, null, 16]} />
           <Image
-            display={['flex', 'none']}
+            display={['flex', null, 'none']}
             src={PriceTag}
             alt='Цена: 60 евро'
-            transform='translate(0, 2rem) scale(0.7)'
+            transform='translate(0, 1rem) scale(0.7)'
           />
         </HStack>
         <HStack alignItems='flex-start'>
           <Heading
             as='h3'
-            pb={['1rem', '2rem']}
+            pb={['1rem', null, '2rem']}
             fontFamily='Cormorant Garamond'
             lineHeight='120%'
             fontWeight='700'
-            fontSize={['1.75rem', '2rem']}
+            fontSize={['1.75rem', null, '2rem']}
             color='#000000'
           >
             Личные онлайн-консультации.
             <br /> Получите персональные рекомендации
             <br /> по следующим вопросам:
           </Heading>
-          <Flex display={['none', 'flex']}>
+          <Flex display={['none', null, 'flex']}>
             <Image
               src={PriceTag}
               alt='Цена: 60 евро'
@@ -118,7 +119,7 @@ const OnlineConsultation = () => {
             />
           </Flex>
         </HStack>
-        <Flex flexDir={['column', 'row']} gap={['0.5rem', '2rem']}>
+        <Flex flexDir={['column', null, 'row']} gap={['0.5rem', '0', '2rem']}>
           {[
             {
               title: 'Апробация',
@@ -152,21 +153,21 @@ const OnlineConsultation = () => {
             <ConsultationCard key={index} {...card} />
           ))}
         </Flex>
-        <Text display={['none', 'block']} mt='6.5rem'>
+        <Text display={['none', null, 'block']} mt='6.5rem'>
           * 30.000 ₸ / 6.000 с
         </Text>
       </VStack>
       <Button
         bg='#dd0000'
         color='#faf9f6'
-        fontSize={['0.875rem', '1rem']}
-        borderRadius={['0.625rem', '0.9375rem']}
-        w={['13rem', '14rem']}
-        h={['3.5rem', '4rem']}
-        mt={['2rem', '0']}
-        p='1.25rem 1.5rem'
+        fontSize={['0.875rem', null, '1rem']}
+        borderRadius={['0.625rem', null, '0.9375rem']}
+        w={['13rem', null, '14rem']}
+        h={['3.5rem', null, '4rem']}
+        mt={['2rem', null, '0']}
+        p='1.25rem, null, 1.5rem'
         border='none'
-        transform={['', 'translate(0px, -4.5rem) scale(1)']}
+        transform={['', null, 'translate(0px, -4.5rem) scale(1)']}
         onClick={handleClick('contactme-section')}
         link='#contact-me'
         _hover={{
@@ -178,9 +179,9 @@ const OnlineConsultation = () => {
         Получить консультацию
       </Button>
       <Text
-        display={['block', 'none']}
-        mt={['2rem', '0']}
-        fontSize={['0.75rem', '1rem']}
+        display={['block', null, 'none']}
+        mt={['2rem', null, '0']}
+        fontSize={['0.75rem', null, '1rem']}
       >
         * 30.000 ₸ / 6.000 с
       </Text>

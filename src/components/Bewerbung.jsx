@@ -22,14 +22,14 @@ const BewerbungCard = ({ title, listItems }) => {
     <Card
       direction='column'
       borderRadius='1.5rem'
-      width={['100%', '33.3%']}
-      height={['auto', '16rem']}
+      width={['100%', null, '33.3%']}
+      height={['auto', null, '16rem']}
       p='1rem'
       background='#faf9f6'
       boxShadow='4px 4px 4px 0px rgba(0, 0, 0, 0.4)'
       border='1px solid #3f3f3fcc'
     >
-      <CardBody p={['1rem', '1.25rem']}>
+      <CardBody p={['1rem', null, '1.25rem']}>
         <VStack alignItems='flex-start' gap='1rem'>
           <HStack alignItems='center' gap='1rem'>
             <FontAwesomeIcon icon={faSquareCheck} color='#dd0000' size='2xl' />
@@ -48,7 +48,7 @@ const BewerbungCard = ({ title, listItems }) => {
           <List
             styleType='disc'
             stylePosition='inside'
-            spacing={'0.25rem'}
+            spacing='0.25rem'
             fontFamily='Manrope'
             lineHeight='140%'
             fontWeight='400'
@@ -76,6 +76,39 @@ const Bewerbung = () => {
       });
     }
   };
+
+  const headingStyle = {
+    as: 'h3',
+    textAlign: ['left', null, 'center'],
+    maxWidth: ['100%', null, '30rem'],
+    paddingBottom: '2rem',
+    fontFamily: 'Cormorant Garamond',
+    lineHeight: '120%',
+    fontWeight: '700',
+    fontSize: ['1.75rem', null, '2rem'],
+    color: '#000000',
+  };
+
+  const buttonStyle = {
+    background: '#dd0000',
+    color: '#faf9f6',
+    fontSize: ['0.875rem', null, '1rem'],
+    borderRadius: ['0.625rem', null, '0.9375rem'],
+    width: ['10rem', null, '12rem'],
+    height: ['3.5rem', null, '4rem'],
+    marginTop: ['2rem', null, '0'],
+    padding: '1.25rem 1.5rem',
+    border: 'none',
+    transform: ['', null, 'translate(0px, -4rem) scale(1)'],
+    onClick: handleClick('contactme-section'),
+    link: '#contact-me',
+    _hover: {
+      background: '#faf9f6',
+      color: '#dd0000',
+      border: '2px solid #dd0000',
+    },
+  };
+
   return (
     <Box
       w='100%'
@@ -85,7 +118,7 @@ const Bewerbung = () => {
       gap='0'
     >
       <Divider
-        display={['block', 'none']}
+        display={['block', null, 'none']}
         orientation='horizontal'
         w='90%'
         h='1px'
@@ -94,7 +127,7 @@ const Bewerbung = () => {
         bg='#000'
       />
       <VStack
-        p={['4rem 1.25rem', '4rem 4rem 0 4rem']}
+        p={['4rem 1.25rem', '4rem 2rem', '4rem 4rem 0 4rem']}
         alignItems='center'
         justifyContent='center'
         id='bewerbung-section'
@@ -103,35 +136,29 @@ const Bewerbung = () => {
         <HStack
           w='100%'
           alignItems='center'
-          justifyContent={['space-between', 'center']}
+          justifyContent={['space-between', null, 'center']}
           gap='0'
         >
           <BewerbungIcon boxSize={[14, 16]} />
-          <PriceTag3 boxSize={28} transform='translate(0rem, 1rem)' />
+          <PriceTag3
+            display={['flex', null, 'none']}
+            boxSize={28}
+            transform='translate(0rem, 1rem)'
+          />
         </HStack>
-        <HStack pl={['0', '8rem']} gap='0'>
-          <Heading
-            as='h3'
-            textAlign={['left', 'center']}
-            maxW='30rem'
-            pb='2rem'
-            fontFamily='Cormorant Garamond'
-            lineHeight='120%'
-            fontWeight='700'
-            fontSize={['1.75rem', '2rem']}
-            color='#000000'
-          >
+        <HStack pl={['0', null, '8rem']} gap='0'>
+          <Heading {...headingStyle}>
             Пакет “Цепляющий Bewerbung для немецких работодателей или для подачи
             на duales Studium”
           </Heading>
-          <Flex display={['none', 'flex']}>
+          <Flex display={['none', null, 'flex']}>
             <PriceTag3 boxSize={32} transform='translate(0rem, -5rem)' />
           </Flex>
         </HStack>
-        <VStack spacing={['1rem', '1.5rem']} alignItems={'flex-start'}>
+        <VStack spacing={['1rem', null, '1.5rem']} alignItems={'flex-start'}>
           <Flex
-            flexDir={['column', 'row']}
-            gap={['1rem', '1.5rem']}
+            flexDir={['column', null, 'row']}
+            gap={['1rem', null, '1.5rem']}
             justifyContent='center'
           >
             {[
@@ -161,8 +188,8 @@ const Bewerbung = () => {
             ))}
           </Flex>
           <Flex
-            flexDir={['column', 'row']}
-            gap={['1rem', '1.5rem']}
+            flexDir={['column', null, 'row']}
+            gap={['1rem', null, '1.5rem']}
             justifyContent='center'
           >
             {[
@@ -191,35 +218,15 @@ const Bewerbung = () => {
               <BewerbungCard key={index} {...card} />
             ))}
           </Flex>
-          <Text display={['none', 'block']} mt='5rem'>
+          <Text display={['none', null, 'block']} mt='5rem'>
             * 75.000 ₸ / 15.000 с
           </Text>
         </VStack>
-        <Button
-          bg='#dd0000'
-          color='#faf9f6'
-          fontSize={['0.875rem', '1rem']}
-          borderRadius={['0.625rem', '0.9375rem']}
-          w={['10rem', '14rem']}
-          h={['3.5rem', '4rem']}
-          mt={['2rem', '0']}
-          p='1.25rem 1.5rem'
-          border='none'
-          transform={['', 'translate(0px, -4rem) scale(1)']}
-          onClick={handleClick('contactme-section')}
-          link='#contact-me'
-          _hover={{
-            background: '#faf9f6',
-            color: '#dd0000',
-            border: '2px solid #dd0000',
-          }}
-        >
-          Заказать пакет
-        </Button>
+        <Button {...buttonStyle}>Заказать пакет</Button>
         <Text
-          display={['block', 'none']}
-          mt={['2rem', '0']}
-          fontSize={['0.75rem', '1rem']}
+          display={['block', null, 'none']}
+          mt={['2rem', null, '0']}
+          fontSize={['0.75rem', null, '1rem']}
         >
           * 75.000 ₸ / 15.000 с
         </Text>

@@ -145,10 +145,31 @@ const Approbation = () => {
       });
     }
   };
+
+  const buttonStyle = {
+    background: '#dd0000',
+    color: '#faf9f6',
+    fontSize: ['0.875rem', null, '1rem'],
+    borderRadius: ['0.625rem', null, '0.9375rem'],
+    width: ['10rem', null, '12rem'],
+    height: ['3.5rem', null, '4rem'],
+    marginTop: ['2rem', null, '0'],
+    padding: '1.25rem 1.5rem',
+    border: 'none',
+    transform: ['', null, 'translate(0px, -4rem) scale(1)'],
+    onClick: handleClick('contactme-section'),
+    link: '#contact-me',
+    _hover: {
+      background: '#faf9f6',
+      color: '#dd0000',
+      border: '2px solid #dd0000',
+    },
+  };
+
   return (
     <Box w='100%' position='sticky'>
       <Divider
-        display={['block', 'none']}
+        display={['block', null, 'none']}
         orientation='horizontal'
         w='90%'
         h='1px'
@@ -162,7 +183,7 @@ const Approbation = () => {
           position='sticky'
           justifyContent='center'
           gap='0'
-          p={['4rem 1.25rem', '4rem 4rem 0 4rem']}
+          p={['4rem 1.25rem', '4rem 2rem', '4rem 4rem 0 4rem']}
         >
           <VStack gap='0' alignItems='flex-start' id='approbation-section'>
             <HStack gap='0' alignItems='flex-start'>
@@ -173,29 +194,30 @@ const Approbation = () => {
                   justifyContent='space-between'
                   gap='0'
                 >
-                  <ApprobationIcon boxSize={[14, 16]} />
+                  <ApprobationIcon boxSize={[14, null, 16]} />
                   <Image
-                    display={['flex', 'none']}
+                    display={['flex', null, 'none']}
                     src={PriceTag}
                     alt='Цена: 250 евро'
-                    transform='translate(0rem, 1rem) scale(0.7)'
+                    transform='translate(-1rem, 2rem) scale(0.7)'
                     alignSelf='center'
                   />
                 </HStack>
                 <Heading
                   as='h3'
+                  w={['100%', '80%', '100%']}
                   pb='1rem'
                   fontFamily='Cormorant Garamond'
                   lineHeight='120%'
                   fontWeight='700'
-                  fontSize={['1.75rem', '2rem']}
+                  fontSize={['1.75rem', null, '2rem']}
                   color='#000000'
                 >
                   Пакет “Сопровождение по апробации — от сбора до отправки”
                 </Heading>
               </VStack>
               <Image
-                display={['none', 'flex']}
+                display={['none', null, 'flex']}
                 src={PriceTag}
                 alt='Цена: 250 евро'
                 transform='translate(0rem, 0rem) scale(0.8)'
@@ -203,6 +225,7 @@ const Approbation = () => {
               />
             </HStack>
             <Text
+              w={['100%', '85%', '100%']}
               fontFamily='Manrope'
               lineHeight='140%'
               fontWeight='400'
@@ -214,15 +237,15 @@ const Approbation = () => {
               необходимых документов на апробацию.
             </Text>
             <Flex
-              flexDir={['column', 'row']}
+              flexDir={['column', null, 'row']}
               pt='2rem'
-              gap={['1rem', '1rem']}
+              gap={['1rem', null, '1rem']}
               alignItems='flex-start'
             >
               <VStack
                 alignItems='flex-start'
-                w={['100%', '50%']}
-                gap={['1rem', '0.5rem']}
+                w={['100%', null, '50%']}
+                gap={['1rem', null, '0.5rem']}
               >
                 <TimelineItem
                   number='1'
@@ -264,7 +287,7 @@ const Approbation = () => {
                     'Подготовка дополнительных материалов по запросу',
                   ]}
                 />
-                <Flex display={['flex', 'none']}>
+                <Flex display={['flex', null, 'none']}>
                   <TimelineItem
                     number='6'
                     title='Присяжный переводчик и заполнение анкет'
@@ -274,7 +297,7 @@ const Approbation = () => {
                     ]}
                   />
                 </Flex>
-                <Flex display={['none', 'flex']}>
+                <Flex display={['none', null, 'flex']}>
                   <LastTimelineItem
                     number='6'
                     title='Присяжный переводчик и заполнение анкет'
@@ -287,8 +310,8 @@ const Approbation = () => {
               </VStack>
               <VStack
                 alignItems='flex-start'
-                w={['100%', '50%']}
-                gap={['1rem', '0.5rem']}
+                w={['100%', null, '50%']}
+                gap={['1rem', null, '0.5rem']}
               >
                 <TimelineItem
                   number='7'
@@ -340,35 +363,15 @@ const Approbation = () => {
                 />
               </VStack>
             </Flex>
-            <Text display={['none', 'block']} mt='6.5rem'>
+            <Text display={['none', null, 'block']} mt='6.5rem'>
               * 125.000 ₸ / 25.000 с
             </Text>
           </VStack>
-          <Button
-            bg='#dd0000'
-            color='#faf9f6'
-            fontSize={['0.875rem', '1rem']}
-            borderRadius={['0.625rem', '0.9375rem']}
-            w={['10rem', '14rem']}
-            h={['3.5rem', '4rem']}
-            mt={['2rem', '0']}
-            p='1.25rem 1.5rem'
-            border='none'
-            transform={['', 'translate(0px, -4.5rem) scale(1)']}
-            onClick={handleClick('contactme-section')}
-            link='#contact-me'
-            _hover={{
-              background: '#faf9f6',
-              color: '#dd0000',
-              border: '2px solid #dd0000',
-            }}
-          >
-            Заказать пакет
-          </Button>
+          <Button {...buttonStyle}>Заказать пакет</Button>
           <Text
-            display={['block', 'none']}
-            mt={['2rem', '0']}
-            fontSize={['0.75rem', '1rem']}
+            display={['block', null, 'none']}
+            mt={['2rem', null, '0']}
+            fontSize={['0.75rem', null, '1rem']}
           >
             * 125.000 ₸ / 25.000 с
           </Text>

@@ -1,30 +1,38 @@
 import { Text, Box, Flex, Image, VStack } from '@chakra-ui/react';
 import '../App.scss';
-import './AboutMe.css';
 import AboutMePhoto from '../assets/AboutMe_photo.jpg';
 
 const AboutMe = () => {
+  const bgStyle = {
+    width: '50%',
+    height: '100%',
+    background: `url(${AboutMePhoto}) center/cover`,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    zIndex: -1,
+  };
   const textStyle = {
     fontFamily: 'Manrope',
     fontWeight: '400',
     fontStyle: 'normal',
-    lineHeight: ['140%', '130%'],
+    lineHeight: ['140%', null, '130%'],
     mx: '0',
-    my: ['0.4rem', '0.75rem'],
+    my: ['0.4rem', null, '0.75rem'],
     fontSize: '1rem',
   };
   return (
     <Box className='aboutme' backgroundColor='#faf9f6' position='sticky'>
       <Flex
-        flexDir={['column', 'row']}
-        alignItems={['center', 'flex-start']}
+        flexDir={['column', null, 'row']}
+        alignItems={['center', null, 'flex-start']}
         justifyContent='flex-end'
         gap='0px'
       >
-        <Box display={['none', 'block']} className='aboutme-bg'></Box>
+        <Box display={['none', null, 'block']} {...bgStyle}></Box>
         <VStack
-          w={['100%', '50%']}
-          p={['4rem 1.25rem', '4rem']}
+          w={['100%', null, '50%']}
+          p={['4rem 1.25rem', '4rem 2rem', '4rem']}
           alignItems='flex-start'
           gap='0px'
         >
@@ -43,7 +51,11 @@ const AboutMe = () => {
               {text}
             </Text>
           ))}
-          <Image src={AboutMePhoto} display={['block', 'none']} mt='1rem' />
+          <Image
+            src={AboutMePhoto}
+            display={['block', null, 'none']}
+            mt='1rem'
+          />
         </VStack>
       </Flex>
     </Box>

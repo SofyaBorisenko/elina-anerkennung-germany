@@ -6,14 +6,14 @@ import './Benefits.css';
 
 const BenefitItem = ({ title, description }) => (
   <HStack alignItems='flex-start' gap='1rem'>
-    <CheckIcon color='#dd0000' fontSize={['1.5rem', '2rem']} />
-    <VStack alignItems='flex-start' h={['auto', '11rem']} gap='1rem'>
+    <CheckIcon color='#dd0000' fontSize={['1.5rem', null, '2rem']} />
+    <VStack alignItems='flex-start' h={['auto', null, '11rem']} gap='1rem'>
       <Heading
         as='h6'
         fontFamily='Cormorant Garamond'
-        lineHeight={['120%', '140%']}
+        lineHeight={['120%', null, '140%']}
         fontWeight='700'
-        fontSize={['1.575rem', '1.75rem']}
+        fontSize={['1.575rem', null, '1.75rem']}
         fontStyle='normal'
         color='#000000'
       >
@@ -35,16 +35,16 @@ const BenefitItem = ({ title, description }) => (
 
 const Benefits = () => (
   <Box w='100%' position='sticky'>
-    <Box display={['none', 'block']} className='yellow-divider'></Box>
+    <Box display={['none', null, 'block']} className='yellow-divider'></Box>
     <Box
       className='benefits_background'
-      p={['4rem 1.25rem', '4rem 4rem 7rem 4rem']}
+      p={['4rem 1.25rem', '4rem 2rem', '4rem 4rem 7rem 4rem']}
     >
-      <Flex justifyContent='center' pb={['1rem', '3rem']}>
+      <Flex justifyContent='center' pb={['1rem', null, '3rem']}>
         <h2 className='highlighted-heading'>Преимущества</h2>
       </Flex>
-      <Flex flexDir={['column', 'row']} gap={['1rem', '2rem']}>
-        <VStack gap={['1rem', '2rem']}>
+      <Flex flexDir={['column', null, 'row']} gap={['1rem', null, '2rem']}>
+        <VStack gap={['1rem', null, '2rem']}>
           {[
             {
               title: 'Индивидуальный подход',
@@ -65,7 +65,7 @@ const Benefits = () => (
             <BenefitItem key={index} {...item} />
           ))}
         </VStack>
-        <VStack gap={['1rem', '2rem']}>
+        <VStack gap={['1rem', null, '2rem']}>
           {[
             {
               title: 'Детальный анализ',
@@ -88,7 +88,7 @@ const Benefits = () => (
         </VStack>
       </Flex>
     </Box>
-    <Box display={['none', 'block']} className='yellow-divider'></Box>
+    <Box display={['none', null, 'block']} className='yellow-divider'></Box>
   </Box>
 );
 

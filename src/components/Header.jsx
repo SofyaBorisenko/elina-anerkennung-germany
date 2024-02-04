@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Box, Button, IconButton, Image, HStack } from '@chakra-ui/react';
+import { Box, Flex, IconButton, Image, HStack } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { useGlobalContext } from './Context';
 import DesktopLogo from '../assets/Logo_header_desktop.png';
@@ -42,9 +42,10 @@ const Header = () => {
         display={{ base: 'block', md: 'none' }}
         backgroundColor='#000000'
         h='3.75rem'
-        px='0.5rem'
+        px={['0.5rem', '2rem']}
       >
-        <HStack justifyContent='space-between' alignItems='center'>
+        <HStack justifyContent='space-between' alignItems='center' gap='0'>
+          =
           <IconButton
             bg='#000'
             color='#faf9f6'
@@ -52,7 +53,7 @@ const Header = () => {
             icon={<HamburgerIcon />}
             fontSize={'2.25rem'}
           />
-          <Image src={MobileLogo} maxW='8.75rem'></Image>
+          <Image src={MobileLogo} maxW='8.75rem' />
         </HStack>
       </Box>
       {/* Full-Screen Version */}
@@ -69,6 +70,7 @@ const Header = () => {
         transform={visible ? 'translateY(0)' : 'translateY(-9rem)'}
         ref={headerRef}
         h='4.5rem'
+        zIndex='1'
       >
         <HStack
           justifyContent='space-between'

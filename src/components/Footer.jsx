@@ -43,22 +43,22 @@ const Footer = () => {
     }
   };
   return (
-    <Box backgroundColor='#000000' h={['auto', '16rem']}>
+    <Box backgroundColor='#000000' h={['auto', null, '16rem']}>
       <footer>
-        <VStack h='auto' px={['1.25rem', '4rem']}>
+        <VStack h='auto' px={['1.25rem', '2rem', '4rem']}>
           <Flex
-            flexDir={['column', 'row']}
+            flexDir={['column', null, 'row']}
             p='3rem 0'
             w='100%'
             gap='3rem'
             alignItems='center'
             justifyContent='space-between'
           >
-            <Image src={Logo} w={['12.5rem', '10rem']}></Image>
+            <Image src={Logo} w={['12.5rem', null, '10rem']}></Image>
             <nav>
               <Flex
-                flexDir={['column', 'row']}
-                gap={['1rem', '2.25rem']}
+                flexDir={['column', null, 'row']}
+                gap={['1rem', null, '2.25rem']}
                 align='center'
               >
                 <a href='#about-me' onClick={handleClick('aboutme-section')}>
@@ -79,7 +79,10 @@ const Footer = () => {
               </Flex>
             </nav>
             <nav>
-              <HStack spacing={['1rem', '1.5rem']} pl={['0', '4.59375rem']}>
+              <HStack
+                spacing={['1rem', null, '1.5rem']}
+                pl={['0', null, '4.59375rem']}
+              >
                 {socials.map((social, index) => (
                   <a href={social.url} key={index}>
                     <FontAwesomeIcon icon={social.icon} size='1x' />
@@ -100,7 +103,7 @@ const Footer = () => {
             justifyContent='center'
             alignItems='center'
           >
-            <Text textAlign='center' mb='1rem'>
+            <Text textAlign='center' mb={['1rem', null, '0']}>
               © 2023 Elina Anerkennung Germany.
               <br />
               All rights reserved.
