@@ -43,22 +43,22 @@ const Footer = () => {
     }
   };
   return (
-    <Box backgroundColor='#000000' h={['auto', null, '16rem']}>
+    <Box backgroundColor='#000000' h={['auto', null, null, '16rem']}>
       <footer>
-        <VStack h='auto' px={['1.25rem', '2rem', '4rem']}>
+        <VStack h='auto' px={['1.25rem', '2rem', null, '4rem']}>
           <Flex
-            flexDir={['column', null, 'row']}
+            flexDir={['column', null, 'row', null]}
             p='3rem 0'
             w='100%'
             gap='3rem'
             alignItems='center'
             justifyContent='space-between'
           >
-            <Image src={Logo} w={['12.5rem', null, '10rem']}></Image>
+            <Image src={Logo} w={['12.5rem', null, '10rem', null]}></Image>
             <nav>
               <Flex
-                flexDir={['column', null, 'row']}
-                gap={['1rem', null, '2.25rem']}
+                flexDir={['column', null, 'row', null]}
+                gap={['1rem', null, '2.25rem', null]}
                 align='center'
               >
                 <a href='#about-me' onClick={handleClick('aboutme-section')}>
@@ -80,8 +80,8 @@ const Footer = () => {
             </nav>
             <nav>
               <HStack
-                spacing={['1rem', null, '1.5rem']}
-                pl={['0', null, '4.59375rem']}
+                spacing={['1rem', null, '1.5rem', null]}
+                pl={['0', null, '4.59375rem', null]}
               >
                 {socials.map((social, index) => (
                   <a href={social.url} key={index}>
@@ -103,7 +103,7 @@ const Footer = () => {
             justifyContent='center'
             alignItems='center'
           >
-            <Text textAlign='center' mb={['1rem', null, '0']}>
+            <Text textAlign='center' mb={['1rem', null, '0', null]}>
               © 2023 Elina Anerkennung Germany.
               <br />
               All rights reserved.

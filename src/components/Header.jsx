@@ -76,11 +76,11 @@ const Header = () => {
           justifyContent='space-between'
           alignItems='center'
           h='100%'
-          px={'4rem'}
+          px={{ md: '2rem', lg: '4rem' }}
         >
-          <Image src={DesktopLogo} w='20rem'></Image>
+          <Image src={DesktopLogo} w={{ md: '16rem', lg: '20rem' }}></Image>
           <nav>
-            <HStack spacing={'3rem'} align='center'>
+            <HStack spacing={{ md: '1rem', lg: '3rem' }} align='center'>
               <a href='#about-me' onClick={handleClick('aboutme-section')}>
                 Обо мне
               </a>

@@ -66,16 +66,16 @@ const ContactMe = () => {
 
   const headingStyle = {
     as: 'h3',
-    maxW: ['100%', '66%', '100%'],
+    maxW: ['100%', '66%', null, '100%'],
     paddingBottom: '1rem',
     fontFamily: 'Cormorant Garamond',
-    fontSize: ['2.25rem', null, '3.375rem'],
+    fontSize: ['2.25rem', null, null, '3.375rem'],
     fontWeight: '700',
     id: 'contactme-section',
   };
 
   const textStyle = {
-    maxW: ['100%', '66%', '100%'],
+    maxW: ['100%', '66%', null, '100%'],
     paddingBottom: '1rem',
     color: '#000000',
     textAlign: 'center',
@@ -87,7 +87,7 @@ const ContactMe = () => {
   };
 
   const labelStyle = {
-    mb: ['0.25rem', null, '0.5rem'],
+    mb: ['0.25rem', null, null, '0.5rem'],
     color: '#000000',
     fontFamily: 'Manrope',
     fontStyle: 'normal',
@@ -98,7 +98,7 @@ const ContactMe = () => {
 
   const inputStyle = {
     variant: 'outline',
-    w: ['100%', null, '15.5rem'],
+    w: ['100%', null, null, '15.5rem'],
     h: '2rem',
     p: '0.5rem',
     backgroundColor: '#faf9f6',
@@ -142,8 +142,8 @@ const ContactMe = () => {
     fontSize: '0.75rem',
     fontWeight: '300',
     lineHeight: '150%',
-    maxWidth: ['100%', null, '32rem'],
-    width: ['100%', null, '32rem'],
+    maxWidth: ['100%', null, null, '32rem'],
+    width: ['100%', null, null, '32rem'],
     height: '2rem',
   };
 
@@ -161,9 +161,10 @@ const ContactMe = () => {
     color: '#faf9f6',
     borderRadius: '0.9375rem',
     border: '2px solid #dd0000',
+    fontSize: ['0.875rem', null, null, '1rem'],
     type: 'submit',
-    width: '8.75rem',
-    height: '2.5rem',
+    width: ['6.5rem', null, null, '8.75rem'],
+    height: ['2rem', null, null, '2.5rem'],
     marginTop: '1.5rem',
     padding: '1.25rem 1.5rem',
     _hover: {
@@ -176,23 +177,26 @@ const ContactMe = () => {
   const [resize, setResize] = React.useState('vertical');
 
   return (
-    <Box backgroundColor='#ffce00' p={['4rem 1.25rem', '4rem 2rem', '4rem']}>
+    <Box
+      backgroundColor='#ffce00'
+      p={['4rem 1.25rem', '4rem 2rem', '3rem 2rem', '4rem']}
+    >
       <VStack alignItems='center' gap='0'>
         <Heading {...headingStyle}>Свяжитесь со мной</Heading>
         <Text {...textStyle}>
           Есть вопрос или хотите заказать консультацию? Смело обращайтесь!
         </Text>
         <Flex
-          maxW={['100%', '66%', '100%']}
+          maxW={['100%', '80%', '100%', null]}
           pt='1.5rem'
-          mx={['1rem', null, '0']}
+          mx={['1rem', null, null, '0']}
         >
           <form onSubmit={formik.handleSubmit}>
             <VStack spacing='0.5rem'>
               <Flex
-                flexDir={['column', null, 'row']}
-                w={['100%', null, null]}
-                gap={['0.5rem', null, '1rem']}
+                flexDir={['column', null, 'row', null]}
+                w={['100%', null, '', null]}
+                gap={['0.5rem', null, '1rem', null]}
                 alignItems='flex-start'
               >
                 <FormControl
@@ -237,9 +241,9 @@ const ContactMe = () => {
                 </FormControl>
               </Flex>
               <Flex
-                flexDir={['column', null, 'row']}
-                w={['100%', null, '']}
-                gap={['0.5rem', null, '1rem']}
+                flexDir={['column', null, 'row', null]}
+                w={['100%', null, '', null]}
+                gap={['0.5rem', null, '1rem', null]}
                 alignItems='flex-start'
               >
                 <FormControl

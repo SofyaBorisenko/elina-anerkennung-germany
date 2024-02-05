@@ -30,14 +30,14 @@ const Reviews = () => {
   };
 
   const buttonStyle = {
-    height: ['1.5rem', '2rem', '2.5rem'],
-    minWidth: ['1.5rem', '2rem', '2.5rem'],
+    height: ['1.5rem', '2rem', null, '2.5rem'],
+    minWidth: ['1.5rem', '2rem', null, '2.5rem'],
     background: '#FFCE00',
     border: '2px solid #FFCE00',
     borderRadius: '3.125rem',
     color: '#000106',
-    fontSize: ['0.575rem', '0.75rem', '1rem'],
-    padding: ['0.25rem', '0.5rem', '0.625rem'],
+    fontSize: ['0.575rem', '0.75rem', null, '1rem'],
+    padding: ['0.25rem', '0.5rem', null, '0.625rem'],
     justifyContent: 'center',
     alignItems: 'center',
     _hover: {
@@ -52,7 +52,7 @@ const Reviews = () => {
       w='100%'
       position='sticky'
       bg='#faf9f6'
-      p={['4rem 1.25rem', '4rem 2rem', '4rem']}
+      p={['4rem 1.25rem', '4rem 2rem', '3rem 2rem', '4rem']}
       alignItems='center'
       justifyContent='center'
       id='reviews-section'
@@ -63,7 +63,7 @@ const Reviews = () => {
           <FaArrowLeft />
         </Button>
         <VStack maxW='75%' gap='0'>
-          <HStack maxW={['6rem', '8rem']}>
+          <HStack maxW={['6rem', null, '8rem', null]}>
             <FaStar color='#dd0000' />
             <FaStar color='#dd0000' />
             <FaStar color='#dd0000' />
@@ -73,15 +73,15 @@ const Reviews = () => {
           <Text
             py='2rem'
             textAlign='center'
-            fontSize={['0.875rem', null, '1rem']}
+            fontSize={['0.875rem', null, '1rem', null]}
           >
             {text}
           </Text>
-          <Text fontSize={['0.875rem', null, '1rem']} fontWeight='700'>
+          <Text fontSize={['0.875rem', null, '1rem', null]} fontWeight='700'>
             {name}
           </Text>
           <Text
-            fontSize={['0.875rem', null, '1rem']}
+            fontSize={['0.875rem', null, '1rem', null]}
             className='location'
             fontWeight='600'
           >

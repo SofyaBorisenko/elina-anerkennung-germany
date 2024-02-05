@@ -56,9 +56,20 @@ const Hero = () => {
     },
   };
 
+  const h1Style = {
+    maxWidth: ['80%', null, null],
+    fontFamily: 'Cormorant Infant',
+    fontSize: [null, null, '2.575rem', '3.375rem'],
+    fontStyle: 'normal',
+    fontWeight: '600',
+    lineHeight: '120%',
+    letterSpacing: '-0.10875rem',
+    textTransform: 'uppercase',
+  };
+
   const h4Style = {
-    maxWidth: ['60%', '70%'],
-    marginTop: '1rem',
+    maxWidth: ['60%', '70%', null],
+    marginTop: ['1rem', null, '1.5rem'],
     fontFamily: 'Manrope',
     fontStyle: 'normal',
     letterSpacing: '-0.015px',
@@ -97,18 +108,21 @@ const Hero = () => {
         position='relative'
         color='#faf9f6'
       >
-        <VStack alignItems='flex-start' p='5rem 0 4rem 5rem'>
-          <h1 style={{ maxWidth: '70wv' }}>
+        <VStack
+          alignItems='flex-start'
+          p={{ md: '5rem 2rem 4rem 2rem', lg: '5rem 0 4rem 5rem' }}
+        >
+          <Heading as='h1' {...h1Style}>
             Достойная иммиграция
             <br />и устойчивая интеграция
             <br /> <span className='highlighted-heading'>в Германии</span>
-          </h1>
-          <h4 style={{ maxWidth: '50wv', marginTop: '2.5rem' }}>
+          </Heading>
+          <Heading as='h4' {...h4Style}>
             От тупика к ясности: настройте свой курс
             <br />
             на профессиональный и учебный успех
             <br />с моей поддержкой!
-          </h4>
+          </Heading>
           <Button {...buttonStyle}>
             Записаться
             <br />
@@ -116,7 +130,7 @@ const Hero = () => {
           </Button>
         </VStack>
         <Box {...bgStyle}></Box>
-        <div className='yellow-divider'></div>
+        <Box className='yellow-divider'></Box>
       </Box>
     </div>
   );

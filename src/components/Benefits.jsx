@@ -1,19 +1,24 @@
 import { Box, Flex, Heading, HStack, Text, VStack } from '@chakra-ui/react';
 import { CheckIcon } from '@chakra-ui/icons';
-import '../assets/Benefits.JPG';
+import BenefitsBg from '../assets/Benefits.JPG';
 import '../App.scss';
-import './Benefits.css';
 
 const BenefitItem = ({ title, description }) => (
-  <HStack alignItems='flex-start' gap='1rem'>
-    <CheckIcon color='#dd0000' fontSize={['1.5rem', null, '2rem']} />
-    <VStack alignItems='flex-start' h={['auto', null, '11rem']} gap='1rem'>
+  <HStack alignItems='flex-start' gap='1rem' justifyContent='center'>
+    <CheckIcon color='#dd0000' fontSize={['1.5rem', null, null, '2rem']} />
+    <VStack
+      maxW={['', '', '80%', '']}
+      alignItems='flex-start'
+      h={['auto', null, null, '11rem']}
+      gap='1rem'
+      justifyContent={['flex-start', null, 'center', 'flex-start']}
+    >
       <Heading
         as='h6'
         fontFamily='Cormorant Garamond'
-        lineHeight={['120%', null, '140%']}
+        lineHeight={['120%', null, null, '140%']}
         fontWeight='700'
-        fontSize={['1.575rem', null, '1.75rem']}
+        fontSize={['1.575rem', null, null, '1.75rem']}
         fontStyle='normal'
         color='#000000'
       >
@@ -33,18 +38,58 @@ const BenefitItem = ({ title, description }) => (
   </HStack>
 );
 
+const bgStyle = {
+  width: '100%',
+  height: '100%',
+  p: [
+    '4rem 1.25rem',
+    '4rem 2rem',
+    '3rem 2rem 5rem 2rem',
+    '4rem 4rem 7rem 4rem',
+  ],
+  background: `linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.7) 0%,
+      rgba(255, 255, 255, 0.7) 100%
+    ),
+    url(${BenefitsBg}), #faf9f6 50%`,
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  position: 'sticky',
+  top: 0,
+  right: 0,
+  zIndex: -1,
+};
+
+const h2Style = {
+  marginBottom: '1.25rem',
+  fontFamily: 'Cormorant Infant',
+  fontSize: ['2.5rem', null, null, '3rem'],
+  fontWeight: '700',
+  lineHeight: '120%',
+  textTransform: 'uppercase',
+};
+
 const Benefits = () => (
-  <Box w='100%' position='sticky'>
-    <Box display={['none', null, 'block']} className='yellow-divider'></Box>
+  <Box w='100%'>
     <Box
-      className='benefits_background'
-      p={['4rem 1.25rem', '4rem 2rem', '4rem 4rem 7rem 4rem']}
-    >
-      <Flex justifyContent='center' pb={['1rem', null, '3rem']}>
-        <h2 className='highlighted-heading'>Преимущества</h2>
+      display={['none', null, 'block', null]}
+      className='yellow-divider'
+    ></Box>
+    <Box {...bgStyle}>
+      <Flex justifyContent='center' pb={['1rem', null, '2rem', '3rem']}>
+        <Heading as='h2' {...h2Style} className='highlighted-heading'>
+          Преимущества
+        </Heading>
       </Flex>
-      <Flex flexDir={['column', null, 'row']} gap={['1rem', null, '2rem']}>
-        <VStack gap={['1rem', null, '2rem']}>
+      <Flex
+        flexDir={['column', null, null, 'row']}
+        gap={['1rem', null, '1.5rem', '2rem']}
+      >
+        <VStack
+          gap={['1rem', null, '1.5rem', '2rem']}
+          w={['', null, null, '50%']}
+        >
           {[
             {
               title: 'Индивидуальный подход',
@@ -65,7 +110,10 @@ const Benefits = () => (
             <BenefitItem key={index} {...item} />
           ))}
         </VStack>
-        <VStack gap={['1rem', null, '2rem']}>
+        <VStack
+          gap={['1rem', null, '1.5rem', '2rem']}
+          w={['', null, null, '50%']}
+        >
           {[
             {
               title: 'Детальный анализ',
@@ -88,7 +136,10 @@ const Benefits = () => (
         </VStack>
       </Flex>
     </Box>
-    <Box display={['none', null, 'block']} className='yellow-divider'></Box>
+    <Box
+      display={['none', null, 'block', null]}
+      className='yellow-divider'
+    ></Box>
   </Box>
 );
 

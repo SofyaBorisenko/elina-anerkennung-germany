@@ -32,7 +32,7 @@ const AboutMe = () => {
         <Box display={['none', null, 'block']} {...bgStyle}></Box>
         <VStack
           w={['100%', null, '50%']}
-          p={['4rem 1.25rem', '4rem 2rem', '4rem']}
+          p={['4rem 1.25rem', '4rem 2rem', '3rem 2rem 3rem 3rem', '4rem']}
           alignItems='flex-start'
           gap='0px'
         >
