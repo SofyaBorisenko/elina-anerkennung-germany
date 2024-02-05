@@ -83,7 +83,7 @@ const Hero = () => {
       {/* Mobile Version */}
       <Box display={{ base: 'block', md: 'none' }}>
         <Box {...bgMobStyle}>
-          <VStack alignItems='flex-start' py='2rem'>
+          <VStack alignItems='flex-start' mt='3.75rem' py='2rem'>
             <h1>
               Достойная иммиграция
               <br />и устойчивая интеграция

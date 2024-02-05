@@ -75,8 +75,8 @@ const ContactMe = () => {
   };
 
   const textStyle = {
-    maxW: ['100%', '66%', null, '100%'],
-    paddingBottom: '1rem',
+    maxW: ['90%', '80%', '60%', '100%'],
+    paddingBottom: ['0', null, null, '1rem'],
     color: '#000000',
     textAlign: 'center',
     fontFamily: 'Manrope',

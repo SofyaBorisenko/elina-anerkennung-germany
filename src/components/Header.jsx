@@ -1,5 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Box, Flex, IconButton, Image, HStack } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  IconButton,
+  Image,
+  HStack,
+  background,
+} from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { useGlobalContext } from './Context';
 import DesktopLogo from '../assets/Logo_header_desktop.png';
@@ -43,6 +50,16 @@ const Header = () => {
         backgroundColor='#000000'
         h='3.75rem'
         px={['0.5rem', '2rem']}
+        position='fixed'
+        top={0}
+        left={0}
+        right={0}
+        transitionProperty='transform'
+        transitionDuration='.3s'
+        transitionTimingFunction='ease-in-out'
+        transform={visible ? 'translateY(0)' : 'translateY(-7.5rem)'}
+        ref={headerRef}
+        zIndex='1'
       >
         <HStack justifyContent='space-between' alignItems='center' gap='0'>
           =
@@ -52,6 +69,7 @@ const Header = () => {
             onClick={openSidebar}
             icon={<HamburgerIcon />}
             fontSize={'2.25rem'}
+            _hover={{ background: '#000' }}
           />
           <Image src={MobileLogo} maxW='8.75rem' />
         </HStack>
