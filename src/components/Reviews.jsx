@@ -29,6 +29,11 @@ const Reviews = () => {
     });
   };
 
+  const textStyle = {
+    fontSize: ['0.875rem', null, '1rem', null, null, '1.125rem'],
+    textAlign: 'center',
+  };
+
   const buttonStyle = {
     height: ['1.5rem', '2rem', null, '2.5rem'],
     minWidth: ['1.5rem', '2rem', null, '2.5rem'],
@@ -62,29 +67,21 @@ const Reviews = () => {
         <Button {...buttonStyle} onClick={prevPerson}>
           <FaArrowLeft />
         </Button>
-        <VStack maxW='75%' gap='0'>
-          <HStack maxW={['6rem', null, '8rem', null]}>
+        <VStack maxW={{ base: '75%', '2xl': '60%' }} gap='0'>
+          <HStack maxW={{ base: '6rem', md: '8rem' }}>
             <FaStar color='#dd0000' />
             <FaStar color='#dd0000' />
             <FaStar color='#dd0000' />
             <FaStar color='#dd0000' />
             <FaStar color='#dd0000' />
           </HStack>
-          <Text
-            py='2rem'
-            textAlign='center'
-            fontSize={['0.875rem', null, '1rem', null]}
-          >
+          <Text py={{ base: '2rem', md: '3rem' }} {...textStyle}>
             {text}
           </Text>
-          <Text fontSize={['0.875rem', null, '1rem', null]} fontWeight='700'>
+          <Text {...textStyle} fontWeight='700'>
             {name}
           </Text>
-          <Text
-            fontSize={['0.875rem', null, '1rem', null]}
-            className='location'
-            fontWeight='600'
-          >
+          <Text {...textStyle} fontWeight='600'>
             {location}
           </Text>
         </VStack>

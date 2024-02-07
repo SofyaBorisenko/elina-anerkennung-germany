@@ -81,7 +81,7 @@ const ContactMe = () => {
     textAlign: 'center',
     fontFamily: 'Manrope',
     fontStyle: 'normal',
-    fontSize: '0.875rem',
+    fontSize: ['0.875rem', null, null, '1rem', null, '1.15rem'],
     fontWeight: '600',
     lineHeight: '100%',
   };
@@ -91,14 +91,14 @@ const ContactMe = () => {
     color: '#000000',
     fontFamily: 'Manrope',
     fontStyle: 'normal',
-    fontSize: '0.875rem',
+    fontSize: ['0.875rem', null, null, null, null, '1rem'],
     fontWeight: '500',
     lineHeight: '150%',
   };
 
   const inputStyle = {
     variant: 'outline',
-    w: ['100%', null, null, '15.5rem'],
+    w: ['100%', null, null, '15.5rem', null, '20rem'],
     h: '2rem',
     p: '0.5rem',
     backgroundColor: '#faf9f6',
@@ -106,7 +106,7 @@ const ContactMe = () => {
     borderRadius: '0.25rem',
     fontFamily: 'Manrope',
     fontStyle: 'normal',
-    fontSize: '0.875rem',
+    fontSize: ['0.875rem', null, null, null, null, '1rem'],
     fontWeight: '400',
     lineHeight: '150%',
   };
@@ -125,7 +125,7 @@ const ContactMe = () => {
     color: '#3F3F3F',
     fontFamily: 'Manrope',
     fontStyle: 'normal',
-    fontSize: '0.75rem',
+    fontSize: ['0.75rem', null, null, null, null, '0.875rem'],
     fontWeight: '300',
     lineHeight: '150%',
     p: '0.25rem',
@@ -142,8 +142,8 @@ const ContactMe = () => {
     fontSize: '0.75rem',
     fontWeight: '300',
     lineHeight: '150%',
-    maxWidth: ['100%', null, null, '32rem'],
-    width: ['100%', null, null, '32rem'],
+    maxWidth: ['100%', null, null, '32rem', null, '41rem'],
+    width: ['100%', null, null, '32rem', null, '41rem'],
     height: '2rem',
   };
 
@@ -151,7 +151,6 @@ const ContactMe = () => {
     border: '1px solid #3f3f3fcc',
     borderRadius: '0.25rem',
     backgroundColor: '#FAF9F6',
-    with: '31.066625rem',
     height: '7.5rem',
     padding: '0.5rem',
   };
@@ -159,7 +158,7 @@ const ContactMe = () => {
   const buttonStyle = {
     backgroundColor: '#dd0000',
     color: '#faf9f6',
-    borderRadius: '0.9375rem',
+    borderRadius: ['0.625rem', null, null, '0.9375rem'],
     border: '2px solid #dd0000',
     fontSize: ['0.875rem', null, null, '1rem'],
     type: 'submit',

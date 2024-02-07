@@ -42,12 +42,12 @@ const Hero = () => {
     link: '#online-consultation',
     background: '#dd0000',
     color: '#faf9f6',
-    fontSize: ['0.875rem', '1rem'],
+    fontSize: ['0.875rem', '1rem', null, null, null, '1.25rem'],
     border: 'none',
     borderRadius: ['0.625rem', '0.9375rem'],
-    width: ['8rem', '10rem', '12rem'],
-    height: ['3.5rem', '4rem'],
-    marginTop: ['2rem', '2rem'],
+    width: ['9rem', '10rem', '12rem', null, null, '14rem'],
+    height: ['3.5rem', '4rem', null, null, null, '5rem'],
+    marginTop: ['2rem', null, null, null, null, '3rem'],
     padding: '1.25rem 1.5rem',
     _hover: {
       background: '#faf9f6',
@@ -57,9 +57,9 @@ const Hero = () => {
   };
 
   const h1Style = {
-    maxWidth: ['80%', null, null],
+    maxWidth: '80%',
     fontFamily: 'Cormorant Infant',
-    fontSize: [null, null, '2.575rem', '3.375rem'],
+    fontSize: [null, null, '2.575rem', '3.375rem', null, '3.75rem'],
     fontStyle: 'normal',
     fontWeight: '600',
     lineHeight: '120%',
@@ -68,12 +68,12 @@ const Hero = () => {
   };
 
   const h4Style = {
-    maxWidth: ['60%', '70%', null],
-    marginTop: ['1rem', null, '1.5rem'],
+    maxWidth: ['60%', '70%'],
+    marginTop: ['1rem', null, '1.5rem', null, null, '2.5rem'],
     fontFamily: 'Manrope',
     fontStyle: 'normal',
     letterSpacing: '-0.015px',
-    fontSize: '1.15rem',
+    fontSize: ['1.15rem', null, null, null, null, '1.5rem'],
     fontWeight: '300',
     lineHeight: '140%',
   };
@@ -104,13 +104,13 @@ const Hero = () => {
       {/* Full-Screen Version */}
       <Box
         display={{ base: 'none', md: 'block' }}
-        mt='4.5rem'
+        mt={{ md: '4.5rem', '2xl': '6rem' }}
         position='relative'
         color='#faf9f6'
       >
         <VStack
           alignItems='flex-start'
-          p={{ md: '5rem 2rem 4rem 2rem', lg: '5rem 0 4rem 5rem' }}
+          p={{ md: '5rem 2rem 4rem 2rem', lg: '5rem 0 4rem 4rem' }}
         >
           <Heading as='h1' {...h1Style}>
             Достойная иммиграция

@@ -22,8 +22,8 @@ const BewerbungCard = ({ title, listItems }) => {
     <Card
       direction='column'
       borderRadius='1.5rem'
-      width={['100%', null, '33.3%', null]}
-      height={['auto', null, null, '16rem']}
+      width={['100%', null, '33.3%']}
+      height={['auto']}
       p='1rem'
       background='#faf9f6'
       boxShadow='4px 4px 4px 0px rgba(0, 0, 0, 0.4)'
@@ -39,7 +39,7 @@ const BewerbungCard = ({ title, listItems }) => {
               fontFamily='Manrope'
               lineHeight='120%'
               fontWeight='700'
-              fontSize='1rem'
+              fontSize={['1rem', null, null, null, null, '1.125rem']}
               wordBreak='break-word'
               hyphens='auto'
               color='#000000'
@@ -54,7 +54,7 @@ const BewerbungCard = ({ title, listItems }) => {
             fontFamily='Manrope'
             lineHeight='140%'
             fontWeight='400'
-            fontSize='0.875rem'
+            fontSize={['0.875rem', null, null, null, null, '1.125rem']}
             color='#000000'
           >
             {listItems.map((item, index) => (
@@ -79,22 +79,22 @@ const Bewerbung = () => {
     }
   };
 
-  const headingStyle = {
+  const h3Style = {
     as: 'h3',
     textAlign: ['left', null, null, 'center'],
     maxWidth: ['100%', null, null, '30rem'],
-    paddingBottom: '2rem',
+    pb: ['2rem', null, null, null, null, '3rem'],
     fontFamily: 'Cormorant Garamond',
     lineHeight: '120%',
     fontWeight: '700',
-    fontSize: ['1.75rem', null, null, '2rem'],
+    fontSize: ['1.75rem', null, null, '2rem', null, '2.25rem'],
     color: '#000000',
   };
 
   const buttonStyle = {
     background: '#dd0000',
     color: '#faf9f6',
-    fontSize: ['0.875rem', null, null, '1rem'],
+    fontSize: ['0.875rem', null, null, '1rem', null, '1.125rem'],
     borderRadius: ['0.625rem', null, null, '0.9375rem'],
     width: ['10rem', null, null, '12rem'],
     height: ['3.5rem', null, null, '4rem'],
@@ -153,8 +153,8 @@ const Bewerbung = () => {
             transform='translate(0rem, 1rem)'
           />
         </HStack>
-        <HStack pl={['0', null, null, '8rem']} gap='0'>
-          <Heading {...headingStyle}>
+        <HStack pl={['0', null, null, '8rem']} gap='0' alignItems='flex-start'>
+          <Heading {...h3Style}>
             Пакет “Цепляющий Bewerbung для немецких работодателей или для подачи
             на duales Studium”
           </Heading>
@@ -163,13 +163,14 @@ const Bewerbung = () => {
           </Flex>
         </HStack>
         <VStack
-          spacing={['1rem', null, null, '1.5rem']}
+          spacing={['1rem', null, null, '1.5rem', null, '2.5rem']}
           alignItems={'flex-start'}
         >
           <Flex
-            flexDir={['column', null, 'row', null]}
-            gap={['1rem', null, '1.5rem', null]}
+            flexDir={['column', null, 'row']}
+            gap={['1rem', null, '1.5rem', null, null, '2.5rem']}
             justifyContent='center'
+            w='100%'
           >
             {[
               {
@@ -198,9 +199,10 @@ const Bewerbung = () => {
             ))}
           </Flex>
           <Flex
-            flexDir={['column', null, 'row', null]}
-            gap={['1rem', null, '1.5rem', null]}
+            flexDir={['column', null, 'row']}
+            gap={['1rem', null, '1.5rem', null, null, '2.5rem']}
             justifyContent='center'
+            w='100%'
           >
             {[
               {
@@ -228,15 +230,15 @@ const Bewerbung = () => {
               <BewerbungCard key={index} {...card} />
             ))}
           </Flex>
-          <Text display={['none', null, 'block', null]} mt='5rem'>
+          <Text display={['none', null, 'block']} mt='5rem'>
             * 75.000 ₸ / 15.000 с
           </Text>
         </VStack>
         <Button {...buttonStyle}>Заказать пакет</Button>
         <Text
-          display={['block', null, 'none', null]}
-          mt={['2rem', null, '0', null]}
-          fontSize={['0.75rem', null, '1rem', null]}
+          display={['block', null, 'none']}
+          mt={['2rem', null, '0']}
+          fontSize={['0.75rem', null, '1rem']}
         >
           * 75.000 ₸ / 15.000 с
         </Text>

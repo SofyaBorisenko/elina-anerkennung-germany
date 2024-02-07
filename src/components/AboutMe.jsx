@@ -1,4 +1,4 @@
-import { Text, Box, Flex, Image, VStack } from '@chakra-ui/react';
+import { Text, Box, Flex, Heading, Image, VStack } from '@chakra-ui/react';
 import '../App.scss';
 import AboutMePhoto from '../assets/AboutMe_photo.jpg';
 
@@ -12,14 +12,24 @@ const AboutMe = () => {
     left: 0,
     zIndex: -1,
   };
+  const h2Style = {
+    as: 'h2',
+    id: 'aboutme-section',
+    marginBottom: '1.25rem',
+    fontFamily: 'Cormorant Infant',
+    fontSize: ['2.5rem', null, null, '3rem', null, '3.25rem'],
+    fontWeight: '700',
+    lineHeight: '120%',
+    textTransform: 'uppercase',
+  };
   const textStyle = {
     fontFamily: 'Manrope',
     fontWeight: '400',
     fontStyle: 'normal',
     lineHeight: ['140%', null, '130%'],
     mx: '0',
-    my: ['0.4rem', null, '0.75rem'],
-    fontSize: '1rem',
+    my: ['0.4rem', null, '0.75rem', null, null, '1rem'],
+    fontSize: ['1rem', null, null, null, null, '1.25rem'],
   };
   return (
     <Box className='aboutme' backgroundColor='#faf9f6' position='sticky'>
@@ -36,9 +46,9 @@ const AboutMe = () => {
           alignItems='flex-start'
           gap='0px'
         >
-          <h2 className='highlighted-heading' id='aboutme-section'>
+          <Heading {...h2Style} className='highlighted-heading'>
             Обо мне
-          </h2>
+          </Heading>
           {[
             'Приветствую тебя! Меня зовут Элина.',
             'Я — иммиграционный консультант по вопросам признания диплома, апробации и поступления в штудиенколлег в Германии.',

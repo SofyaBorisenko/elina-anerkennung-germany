@@ -19,7 +19,7 @@ import './Approbation.css';
 
 const TimelineItem = ({ number, title, items }) => {
   return (
-    <HStack>
+    <HStack gap='0'>
       <VStack>
         <HStack alignItems='flex-start'>
           <VStack>
@@ -44,14 +44,17 @@ const TimelineItem = ({ number, title, items }) => {
               m='0.5rem'
             />
           </VStack>
-          <VStack alignItems='flex-start' pl='1rem'>
+          <VStack
+            alignItems='flex-start'
+            pl={['1rem', null, null, '0.5rem', '1rem']}
+          >
             <Flex h='2rem' alignItems='center'>
               <Heading
                 as='h6'
                 fontFamily='Manrope'
                 lineHeight='130%'
                 fontWeight='700'
-                fontSize={['1rem', null, null, '0.875rem']}
+                fontSize={['1rem', null, null, '0.875rem', '1rem', '1.125rem']}
                 color='#000000'
               >
                 {title}
@@ -64,7 +67,14 @@ const TimelineItem = ({ number, title, items }) => {
               fontFamily='Manrope'
               lineHeight={['140%', null, null, '130%']}
               fontWeight='400'
-              fontSize={['0.875rem', null, null, '0.825rem']}
+              fontSize={[
+                '0.875rem',
+                null,
+                null,
+                '0.825rem',
+                '0.875rem',
+                '1rem',
+              ]}
               color='#000000'
             >
               {items.map((item, index) => (
@@ -81,7 +91,7 @@ const TimelineItem = ({ number, title, items }) => {
 
 const LastTimelineItem = ({ number, title, items }) => {
   return (
-    <HStack>
+    <HStack gap='0'>
       <VStack>
         <HStack alignItems='flex-start'>
           <VStack>
@@ -106,7 +116,7 @@ const LastTimelineItem = ({ number, title, items }) => {
                 fontFamily='Manrope'
                 lineHeight='130%'
                 fontWeight='700'
-                fontSize={['1rem', null, null, '0.875rem']}
+                fontSize={['1rem', null, null, '0.875rem', '1rem', '1.125rem']}
                 color='#000000'
               >
                 {title}
@@ -119,7 +129,14 @@ const LastTimelineItem = ({ number, title, items }) => {
               fontFamily='Manrope'
               lineHeight={['140%', null, null, '130%']}
               fontWeight='400'
-              fontSize={['0.875rem', null, null, '0.825rem']}
+              fontSize={[
+                '0.875rem',
+                null,
+                null,
+                '0.825rem',
+                '0.875rem',
+                '1rem',
+              ]}
               color='#000000'
             >
               {items.map((item, index) => (
@@ -146,17 +163,33 @@ const Approbation = () => {
     }
   };
 
+  const h3Style = {
+    as: 'h3',
+    w: ['100%', '80%', null, '100%'],
+    pb: ['1rem', null, '2rem', '1rem'],
+    fontFamily: 'Cormorant Garamond',
+    lineHeight: '120%',
+    fontWeight: '700',
+    fontSize: ['1.75rem', null, null, '2rem', null, '2.25rem'],
+    color: '#000000',
+  };
+
   const buttonStyle = {
     background: '#dd0000',
     color: '#faf9f6',
-    fontSize: ['0.875rem', null, null, '1rem'],
+    fontSize: ['0.875rem', null, null, '1rem', null, '1.125rem'],
     borderRadius: ['0.625rem', null, null, '0.9375rem'],
     width: ['10rem', null, null, '12rem'],
     height: ['3.5rem', null, null, '4rem'],
     marginTop: ['2rem', null, null, '0'],
     padding: '1.25rem 1.5rem',
     border: 'none',
-    transform: ['', null, null, 'translate(0px, -4rem) scale(1)'],
+    transform: [
+      '',
+      null,
+      'translate(0px, -5.5rem) scale(1)',
+      'translate(0px, -4rem) scale(1)',
+    ],
     onClick: handleClick('contactme-section'),
     link: '#contact-me',
     _hover: {
@@ -183,7 +216,12 @@ const Approbation = () => {
           position='sticky'
           justifyContent='center'
           gap='0'
-          p={['4rem 1.25rem', '4rem 2rem', '3rem 2rem', '4rem 4rem 0 4rem']}
+          p={[
+            '4rem 1.25rem',
+            '4rem 2rem',
+            '3rem 2rem 0 2rem',
+            '4rem 4rem 0 4rem',
+          ]}
         >
           <VStack
             maxW={['100%', null, '80%', '100%']}
@@ -208,16 +246,7 @@ const Approbation = () => {
                     alignSelf='center'
                   />
                 </HStack>
-                <Heading
-                  as='h3'
-                  w={['100%', '80%', null, '100%']}
-                  pb='1rem'
-                  fontFamily='Cormorant Garamond'
-                  lineHeight='120%'
-                  fontWeight='700'
-                  fontSize={['1.75rem', null, null, '2rem']}
-                  color='#000000'
-                >
+                <Heading {...h3Style}>
                   Пакет “Сопровождение по апробации — от сбора до отправки”
                 </Heading>
               </VStack>
@@ -234,7 +263,7 @@ const Approbation = () => {
               fontFamily='Manrope'
               lineHeight='140%'
               fontWeight='400'
-              fontSize='1rem'
+              fontSize={['1rem', null, null, null, null, '1.125rem']}
               color='#000000'
             >
               Этот пакет предоставляет поддержку в течение всего процесса, а
@@ -244,7 +273,7 @@ const Approbation = () => {
             <Flex
               flexDir={['column', null, null, 'row']}
               pt='2rem'
-              gap={['1rem', null, null, '1rem']}
+              gap={['1rem', null, null, '0', '1rem']}
               alignItems='flex-start'
             >
               <VStack
@@ -368,15 +397,15 @@ const Approbation = () => {
                 />
               </VStack>
             </Flex>
-            <Text display={['none', null, null, 'block']} mt='6.5rem'>
+            <Text display={['none', null, 'block']} mt='6rem'>
               * 125.000 ₸ / 25.000 с
             </Text>
           </VStack>
           <Button {...buttonStyle}>Заказать пакет</Button>
           <Text
-            display={['block', null, null, 'none']}
-            mt={['2rem', null, null, '0']}
-            fontSize={['0.75rem', null, null, '1rem']}
+            display={['block', null, 'none']}
+            mt={['2rem', null, '0']}
+            fontSize={['0.75rem', null, '1rem']}
           >
             * 125.000 ₸ / 25.000 с
           </Text>

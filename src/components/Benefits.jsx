@@ -7,9 +7,9 @@ const BenefitItem = ({ title, description }) => (
   <HStack alignItems='flex-start' gap='1rem' justifyContent='center'>
     <CheckIcon color='#dd0000' fontSize={['1.5rem', null, null, '2rem']} />
     <VStack
-      maxW={['', '', '80%', '']}
+      maxW={['100%', null, '80%', '100%']}
       alignItems='flex-start'
-      h={['auto', null, null, '11rem']}
+      h={['auto', null, null, '14rem', '11rem', '13.25rem']}
       gap='1rem'
       justifyContent={['flex-start', null, 'center', 'flex-start']}
     >
@@ -18,7 +18,7 @@ const BenefitItem = ({ title, description }) => (
         fontFamily='Cormorant Garamond'
         lineHeight={['120%', null, null, '140%']}
         fontWeight='700'
-        fontSize={['1.575rem', null, null, '1.75rem']}
+        fontSize={['1.575rem', null, null, '1.75rem', null, '2rem']}
         fontStyle='normal'
         color='#000000'
       >
@@ -28,7 +28,7 @@ const BenefitItem = ({ title, description }) => (
         fontFamily='Manrope'
         lineHeight='150%'
         fontWeight='400'
-        fontSize='1rem'
+        fontSize={['1rem', null, null, null, null, '1.25rem']}
         fontStyle='normal'
         color='#000000'
       >
@@ -64,7 +64,7 @@ const bgStyle = {
 const h2Style = {
   marginBottom: '1.25rem',
   fontFamily: 'Cormorant Infant',
-  fontSize: ['2.5rem', null, null, '3rem'],
+  fontSize: ['2.5rem', null, null, '3rem', null, '3.25rem'],
   fontWeight: '700',
   lineHeight: '120%',
   textTransform: 'uppercase',

@@ -32,19 +32,17 @@ function Alert() {
             color='#000000'
             fontFamily='Manrope'
             fontStyle='normal'
-            fontSize='1rem'
+            fontSize={{ base: '1rem', xl: '1.25rem' }}
             fontWeight='800'
             lineHeight='130%'
           >
-            {isSuccess
-              ? 'Получилось!'
-              : 'Что-то пошло не так...'}
+            {isSuccess ? 'Получилось!' : 'Что-то пошло не так...'}
           </AlertDialogHeader>
           <AlertDialogBody
             color='#000000'
             fontFamily='Manrope'
             fontStyle='normal'
-            fontSize='0.875rem'
+            fontSize={{ base: '0.875rem', xl: '1rem' }}
             fontWeight='500'
             lineHeight='130%'
           >

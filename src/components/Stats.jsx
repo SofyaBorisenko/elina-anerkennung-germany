@@ -31,7 +31,7 @@ const statsData = [
 
 const renderStats = (data) => (
   <Flex
-    flexDir={['column', null, 'row', null]}
+    flexDir={['column', null, 'row']}
     justify='flex-start'
     align='flex-start'
     alignSelf='stretch'
@@ -47,10 +47,10 @@ const renderStats = (data) => (
           alignSelf='stretch'
           fontFamily='Manrope'
           fontWeight='800'
-          fontSize={['1.5rem', null, null, '1.75rem']}
+          fontSize={['1.5rem', null, null, '1.75rem', null, '2.175rem']}
           fontStyle='normal'
           lineHeight='100%'
-          my={['0.5rem', null, null, '1rem']}
+          my={['0.5rem', null, null, '1rem', null, '1.5rem']}
         >
           {stat.label}
         </Text>
@@ -58,10 +58,10 @@ const renderStats = (data) => (
           alignSelf='stretch'
           fontFamily='Manrope'
           fontWeight='800'
-          fontSize={['1rem', null, '0.875rem', '1rem']}
+          fontSize={['1rem', null, '0.875rem', '1rem', null, '1.375rem']}
           fontStyle='normal'
           lineHeight='150%'
-          my={['0.5rem', null, null, '1rem']}
+          my={['0.5rem', null, null, '1rem', null, '1.5rem']}
         >
           {stat.text}
         </Text>
@@ -77,7 +77,7 @@ const Stats = () => {
       direction='column'
       justify='flex-start'
       align='flex-start'
-      spacing={['2rem', null, '3rem', null]}
+      spacing={['2rem', null, '3rem']}
       overflow='hidden'
       background='#ffce00'
     >

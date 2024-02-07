@@ -1,12 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import {
-  Box,
-  Flex,
-  IconButton,
-  Image,
-  HStack,
-  background,
-} from '@chakra-ui/react';
+import { Box, IconButton, Image, HStack, Link } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { useGlobalContext } from './Context';
 import DesktopLogo from '../assets/Logo_header_desktop.png';
@@ -41,6 +34,17 @@ const Header = () => {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, [prevScrollPos, visible, handleScroll]);
+
+  const navLinkStyle = {
+    color: '#faf9f6',
+    textDecoration: 'none',
+    textAlign: 'center',
+    fontFamily: 'Manrope',
+    fontSize: { base: '1rem', '2xl': '1.25rem' },
+    fontStyle: 'normal',
+    fontWeight: '700',
+    lineHeight: '150%',
+  };
 
   return (
     <header>
@@ -85,9 +89,9 @@ const Header = () => {
         transitionDuration='.3s'
         transitionTimingFunction='ease-in-out'
         backgroundColor='#000000'
-        transform={visible ? 'translateY(0)' : 'translateY(-9rem)'}
+        transform={visible ? 'translateY(0)' : 'translateY(-6rem)'}
         ref={headerRef}
-        h='4.5rem'
+        h={{ md: '4.5rem', '2xl': '6rem' }}
         zIndex='1'
       >
         <HStack
@@ -96,23 +100,43 @@ const Header = () => {
           h='100%'
           px={{ md: '2rem', lg: '4rem' }}
         >
-          <Image src={DesktopLogo} w={{ md: '16rem', lg: '20rem' }}></Image>
+          <Image
+            src={DesktopLogo}
+            w={{ md: '16rem', lg: '20rem', '2xl': '24rem' }}
+          />
           <nav>
-            <HStack spacing={{ md: '1rem', lg: '3rem' }} align='center'>
-              <a href='#about-me' onClick={handleClick('aboutme-section')}>
+            <HStack
+              spacing={{ md: '1rem', lg: '3rem', '2xl': '4rem' }}
+              align='center'
+            >
+              <Link
+                href='#about-me'
+                onClick={handleClick('aboutme-section')}
+                {...navLinkStyle}
+              >
                 Обо мне
-              </a>
-
-              <a href='#services' onClick={handleClick('services-section')}>
+              </Link>
+              <Link
+                href='#services'
+                onClick={handleClick('services-section')}
+                {...navLinkStyle}
+              >
                 Услуги
-              </a>
-
-              <a href='#reviews' onClick={handleClick('reviews-section')}>
+              </Link>
+              <Link
+                href='#reviews'
+                onClick={handleClick('reviews-section')}
+                {...navLinkStyle}
+              >
                 Отзывы
-              </a>
-              <a href='#contact-me' onClick={handleClick('contactme-section')}>
+              </Link>
+              <Link
+                href='#contact-me'
+                onClick={handleClick('contactme-section')}
+                {...navLinkStyle}
+              >
                 Связаться со мной
-              </a>
+              </Link>
             </HStack>
           </nav>
         </HStack>

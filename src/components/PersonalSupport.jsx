@@ -25,6 +25,34 @@ const PersonalSupport = () => {
       });
     }
   };
+
+  const h3Style = {
+    as: 'h3',
+    pb: '1rem',
+    fontFamily: 'Cormorant Garamond',
+    lineHeight: '120%',
+    fontWeight: '700',
+    fontSize: ['1.75rem', null, null, '2rem', null, '2.25rem'],
+    color: '#000000',
+  };
+
+  const h6Style = {
+    as: 'h6',
+    fontFamily: 'Manrope',
+    lineHeight: '140%',
+    fontWeight: '700',
+    fontStyle: 'normal',
+    textAlign: 'center',
+    fontSize: { base: '1rem', '2xl': '1.125rem' },
+  };
+
+  const textStyle = {
+    color: '#000000',
+    textAlign: 'center',
+    fontSize: { base: '1rem', '2xl': '1.125rem' },
+    fontWeight: '400',
+  };
+
   return (
     <Box w='100%' position='sticky'>
       <Divider
@@ -43,24 +71,14 @@ const PersonalSupport = () => {
         <VStack gap='0' alignItems='center' id='personalsupport-section'>
           <VStack gap='0' alignItems='center'>
             <PersonalSupportIcon boxSize={[14, null, null, 16]} />
-            <Heading
-              as='h3'
-              pb='1rem'
-              fontFamily='Cormorant Garamond'
-              lineHeight='120%'
-              fontWeight='700'
-              fontSize={['1.75rem', null, null, '2rem']}
-              color='#000000'
-            >
-              Личное сопровождение
-            </Heading>
+            <Heading {...h3Style}>Личное сопровождение</Heading>
             <Text
               w={['100%', null, '60%', '50%']}
               textAlign={'center'}
               fontFamily='Manrope'
               lineHeight={['140%', null, null, '120%']}
               fontWeight='400'
-              fontSize='1rem'
+              fontSize={['1rem', null, null, null, null, '1.125rem']}
               color='#000000'
             >
               Стоимость сопровождения зависит от вашего местоположения,
@@ -84,11 +102,11 @@ const PersonalSupport = () => {
           >
             <VStack w={['50%', null, '30%', '20%']} justifyContent='center'>
               <FontAwesomeIcon icon={faSquareCheck} color='#dd0000' size='xl' />
-              <Heading as='h6' fontSize={'1rem'} textAlign='center'>
+              <Heading {...h6Style}>
                 Поступление
                 <br />в штудиенколлег
               </Heading>
-              <Text textAlign='center'>
+              <Text {...textStyle}>
                 Стоимость:
                 <br />
                 от 800 евро до
@@ -98,17 +116,17 @@ const PersonalSupport = () => {
             </VStack>
             <Image
               src={PersonalSupportImage}
-              w='20rem'
+              w={{ md: '20rem', '2xl': '26rem' }}
               px='3rem'
               mt='2rem'
-              display={['none', null, 'block', null]}
+              display={['none', null, 'block']}
             />
             <VStack w={['50%', null, '30%', '20%']} justifyContent='center'>
               <FontAwesomeIcon icon={faSquareCheck} color='#dd0000' size='xl' />
-              <Heading as='h6' fontSize={'1rem'} textAlign='center'>
+              <Heading {...h6Style}>
                 Трудоустройство <br />в Германии
               </Heading>
-              <Text textAlign='center'>
+              <Text {...textStyle}>
                 Стоимость:
                 <br />
                 от 500 евро до
@@ -121,7 +139,7 @@ const PersonalSupport = () => {
         <Button
           bg='#dd0000'
           color='#faf9f6'
-          fontSize={['0.875rem', null, null, '1rem']}
+          fontSize={['0.875rem', null, null, '1rem', null, '1.125rem']}
           borderRadius={['0.625rem', null, null, '0.9375rem']}
           w={['16rem', null, null, '18rem']}
           h={['3.5rem', null, null, '4rem']}
