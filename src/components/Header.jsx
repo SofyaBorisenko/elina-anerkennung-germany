@@ -53,7 +53,7 @@ const Header = () => {
         display={{ base: 'block', md: 'none' }}
         backgroundColor='#000000'
         h='3.75rem'
-        px={['0.5rem', '2rem']}
+        px={['1.25rem', '2rem']}
         position='fixed'
         top={0}
         left={0}
@@ -75,7 +75,9 @@ const Header = () => {
             fontSize={'2.25rem'}
             _hover={{ background: '#000' }}
           />
-          <Image src={MobileLogo} maxW='8.75rem' />
+          <Link href='/' onClick={handleClick('hero-section')}>
+            <Image src={MobileLogo} maxW='8.75rem' />
+          </Link>
         </HStack>
       </Box>
       {/* Full-Screen Version */}
@@ -100,13 +102,15 @@ const Header = () => {
           h='100%'
           px={{ md: '2rem', lg: '4rem' }}
         >
-          <Image
-            src={DesktopLogo}
-            w={{ md: '16rem', lg: '20rem', '2xl': '24rem' }}
-          />
+          <Link href='/' onClick={handleClick('hero-section')}>
+            <Image
+              src={DesktopLogo}
+              w={{ md: '16rem', lg: '20rem', '2xl': '24rem' }}
+            />
+          </Link>
           <nav>
             <HStack
-              spacing={{ md: '1rem', lg: '3rem', '2xl': '4rem' }}
+              spacing={{ md: '1.75rem', lg: '3rem', '2xl': '4rem' }}
               align='center'
             >
               <Link

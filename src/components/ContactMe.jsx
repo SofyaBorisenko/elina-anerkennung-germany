@@ -12,7 +12,6 @@ import {
   Select,
   Text,
   Textarea,
-  HStack,
   VStack,
 } from '@chakra-ui/react';
 import * as Yup from 'yup';
@@ -37,7 +36,7 @@ const ContactMe = () => {
       comment: '',
     },
     onSubmit: (values) => {
-      submit('https://123.com', values);
+      submit(values);
     },
     validationSchema: Yup.object({
       firstName: Yup.string().required('Пожалуйста, введите имя'),

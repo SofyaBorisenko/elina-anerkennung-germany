@@ -163,12 +163,12 @@ const Bewerbung = () => {
           </Flex>
         </HStack>
         <VStack
-          spacing={['1rem', null, null, '1.5rem', null, '2.5rem']}
+          spacing={['1.5rem', '1rem', '1.5rem', null, null, '2.5rem']}
           alignItems={'flex-start'}
         >
           <Flex
             flexDir={['column', null, 'row']}
-            gap={['1rem', null, '1.5rem', null, null, '2.5rem']}
+            gap={['1.5rem', '1rem', '1.5rem', null, null, '2.5rem']}
             justifyContent='center'
             w='100%'
           >
@@ -200,7 +200,7 @@ const Bewerbung = () => {
           </Flex>
           <Flex
             flexDir={['column', null, 'row']}
-            gap={['1rem', null, '1.5rem', null, null, '2.5rem']}
+            gap={['1.5rem', '1rem', '1.5rem', null, null, '2.5rem']}
             justifyContent='center'
             w='100%'
           >

@@ -154,7 +154,7 @@ const OnlineConsultation = () => {
         </HStack>
         <Flex
           flexDir={['column', null, null, 'row']}
-          gap={['0.75rem', '1rem', '1.5rem', '2rem', null, '4rem']}
+          gap={['1.5rem', '1rem', '1.5rem', '2rem', null, '4rem']}
           alignItems='flex-start'
         >
           {[

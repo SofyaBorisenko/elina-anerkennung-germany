@@ -29,17 +29,18 @@ const statsData = [
   ],
 ];
 
-const renderStats = (data) => (
+const renderStats = (data, outerIndex) => (
   <Flex
     flexDir={['column', null, 'row']}
     justify='flex-start'
     align='flex-start'
     alignSelf='stretch'
     gap={['2rem', null, null, '3.5rem']}
+    key={outerIndex} // Sets key for the outer Flex component
   >
-    {data.map((stat, index) => (
+    {data.map((stat, innerIndex) => (
       <Stat
-        key={index}
+        key={`${outerIndex}-${innerIndex}`} // Concatenates outerIndex and innerIndex for a unique key
         borderLeft='3px solid #000000'
         pl={['1rem', null, null, '2rem']}
       >

@@ -54,7 +54,7 @@ const PersonalSupport = () => {
   };
 
   return (
-    <Box w='100%' position='sticky'>
+    <Box w='100%' position='sticky' bg='#faf9f6'>
       <Divider
         orientation='horizontal'
         w='90%'

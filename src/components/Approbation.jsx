@@ -200,7 +200,7 @@ const Approbation = () => {
   };
 
   return (
-    <Box w='100%' position='sticky'>
+    <Box w='100%' position='sticky' bg='#faf9f6'>
       <Divider
         display={['block', null, 'none']}
         orientation='horizontal'
@@ -210,7 +210,7 @@ const Approbation = () => {
         my='0'
         bg='#000'
       />
-      <div className='approbation_background'>
+      <Box className='approbation_background'>
         <VStack
           w='100%'
           position='sticky'
@@ -410,7 +410,7 @@ const Approbation = () => {
             * 125.000 ₸ / 25.000 с
           </Text>
         </VStack>
-      </div>
+      </Box>
     </Box>
   );
 };

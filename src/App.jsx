@@ -25,7 +25,7 @@ function App() {
         <AlertProvider>
           <main>
             <Header />
-            <Hero />
+            <Hero id='hero-section' />
             <AboutMe id='aboutme-section' />
             <Stats />
             <Services id='services-section' />

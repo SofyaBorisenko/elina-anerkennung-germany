@@ -141,7 +141,7 @@ const Footer = () => {
               fontWeight='500'
               lineHeight='150%'
             >
-              © 2023 Elina Anerkennung Germany.
+              © 2024 Elina Anerkennung Germany.
               <br />
               All rights reserved.
             </Text>

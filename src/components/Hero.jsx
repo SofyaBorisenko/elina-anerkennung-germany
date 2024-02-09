@@ -27,14 +27,14 @@ const Hero = () => {
 
   const bgMobStyle = {
     width: '100%',
+    height: ['100vh', 'auto'],
     background: `linear-gradient(0deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%), url(${HeroBgMob}), #faf9f6 50%`,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     position: 'sticky',
     top: 0,
     left: 0,
-    zIndex: -1,
-    padding: ['1.25rem', '2rem'],
+    padding: ['4rem 1.25rem', '2rem'],
   };
 
   const buttonStyle = {
@@ -47,7 +47,7 @@ const Hero = () => {
     borderRadius: ['0.625rem', '0.9375rem'],
     width: ['9rem', '10rem', '12rem', null, null, '14rem'],
     height: ['3.5rem', '4rem', null, null, null, '5rem'],
-    marginTop: ['2rem', null, null, null, null, '3rem'],
+    marginTop: ['3rem', '2rem', null, null, null, '3rem'],
     padding: '1.25rem 1.5rem',
     _hover: {
       background: '#faf9f6',
@@ -57,9 +57,10 @@ const Hero = () => {
   };
 
   const h1Style = {
-    maxWidth: '80%',
+    as: 'h1',
+    maxWidth: ['100%', '80%'],
     fontFamily: 'Cormorant Infant',
-    fontSize: [null, null, '2.575rem', '3.375rem', null, '3.75rem'],
+    fontSize: ['2.375rem', '2.25rem', null, '3.25rem', null, '3.75rem'],
     fontStyle: 'normal',
     fontWeight: '600',
     lineHeight: '120%',
@@ -68,8 +69,9 @@ const Hero = () => {
   };
 
   const h4Style = {
+    as: 'h4',
     maxWidth: ['60%', '70%'],
-    marginTop: ['1rem', null, '1.5rem', null, null, '2.5rem'],
+    marginTop: ['2rem', '1rem', '1.5rem', null, null, '2.5rem'],
     fontFamily: 'Manrope',
     fontStyle: 'normal',
     letterSpacing: '-0.015px',
@@ -82,13 +84,13 @@ const Hero = () => {
     <div>
       {/* Mobile Version */}
       <Box display={{ base: 'block', md: 'none' }}>
-        <Box {...bgMobStyle}>
+        <Box {...bgMobStyle} id='hero-section'>
           <VStack alignItems='flex-start' mt='3.75rem' py='2rem'>
-            <h1>
+            <Heading {...h1Style}>
               Достойная иммиграция
               <br />и устойчивая интеграция
               <br /> <span className='highlighted-heading'>в Германии</span>
-            </h1>
+            </Heading>
             <Heading as='h4' {...h4Style}>
               От тупика к ясности: настройте свой курс на профессиональный и
               учебный успех с моей поддержкой!
@@ -107,6 +109,7 @@ const Hero = () => {
         mt={{ md: '4.5rem', '2xl': '6rem' }}
         position='relative'
         color='#faf9f6'
+        id='hero-section'
       >
         <VStack
           alignItems='flex-start'
