@@ -66,7 +66,7 @@ const ServiceCard = ({
       direction={['column', null, 'row', null, 'column']}
       borderRadius={['0px', null, '1.5rem']}
       width={['100%', null, null, null, '16.5rem', '20rem']}
-      height={['auto', null, '21rem', '22rem', '38.25rem', '40rem']}
+      height={['auto', null, '21rem', '22rem', '40rem', '42rem']}
       background='#faf9f6'
       boxShadow={[
         'none',
@@ -96,16 +96,15 @@ const ServiceCard = ({
           py={['0.75rem', null, '1.5rem', null, '1.25rem']}
         >
           <VStack
-            h={['auto', null, '6.25rem', '5rem', null, '6.25rem']}
+            h={['auto', null, '6.25rem', '5rem', '6.5rem', '7.5rem']}
             pt={['0.75rem', null, '0']}
-            pb={['0.75rem', null, '1.25rem']}
             alignItems='flex-start'
           >
             {icon}
             <Heading {...h5Style}>{title}</Heading>
           </VStack>
           <VStack
-            h={['fit-content', null, '11.5rem', '14rem', '16rem', '16.5rem']}
+            h={['fit-content', null, '11.5rem', '14rem', '15.5rem', '16.25rem']}
             alignItems='flex-start'
             justifyContent={['space-around', null, 'space-between', null, null]}
             gap={['0.75rem', null, null, '0.5rem', null, null]}
@@ -214,7 +213,7 @@ const Services = () => {
             imageSrc={Service2}
             id='approbation-section'
             icon={<ApprobationIcon boxSize={[10, null, null, null, 8]} />}
-            title='Пакет “Сопровождение по апробации”'
+            title='Пакет “Сопровождение по апробации — от сбора до отправки”'
             description='Воспользуйтесь моей поддержкой и подайте заявку на апробацию самостоятельно, избегая затрат на услуги посреднических агентств и сэкономив ваши финансовые ресурсы.'
             cost='Стоимость: 250 евро'
             link='#approbation'

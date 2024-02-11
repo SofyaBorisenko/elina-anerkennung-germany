@@ -129,9 +129,9 @@ const PersonalSupport = () => {
               <Text {...textStyle}>
                 Стоимость:
                 <br />
-                от 500 евро до
+                от 1000 евро до
                 <br />
-                1000 евро
+                2000 евро
               </Text>
             </VStack>
           </HStack>
