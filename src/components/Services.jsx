@@ -19,10 +19,10 @@ import {
   PersonalSupportIcon,
 } from './icons';
 import '../App.scss';
-import Service1 from '../assets/Service1.jpg';
-import Service2 from '../assets/Service2.jpg';
-import Service3 from '../assets/Service3.jpg';
-import Service4 from '../assets/Service4.jpg';
+import Service1 from '../assets/Service1.webp';
+import Service2 from '../assets/Service2.webp';
+import Service3 from '../assets/Service3.webp';
+import Service4 from '../assets/Service4.webp';
 
 const ServiceCard = ({
   imageSrc,
@@ -65,8 +65,8 @@ const ServiceCard = ({
     <Card
       direction={['column', null, 'row', null, 'column']}
       borderRadius={['0px', null, '1.5rem']}
-      width={['100%', null, null, null, '16.5rem', '20rem']}
-      height={['auto', null, '21rem', '22rem', '40rem', '42rem']}
+      width={['100%', null, null, null, '17rem', '20rem']}
+      height={['auto', null, '21rem', '22rem', '37rem', '42rem']}
       background='#faf9f6'
       boxShadow={[
         'none',
@@ -78,7 +78,9 @@ const ServiceCard = ({
       border={['none', null, '1px solid #3f3f3fcc']}
     >
       <Image
+        loading='lazy'
         src={imageSrc}
+        alt='Фотографии Элины за работой с ноутбуком, телефоном, справочником'
         borderTopRadius={['0', null, null, null, '1.5rem']}
         borderTopLeftRadius={['0', null, '1.5rem']}
         borderBottomLeftRadius={['0', null, '1.5rem', null, '0']}
@@ -92,8 +94,8 @@ const ServiceCard = ({
       >
         <CardBody
           h='100%'
-          px={['0', null, '1.5rem', null, '1.25rem']}
-          py={['0.75rem', null, '1.5rem', null, '1.25rem']}
+          px={['0', null, '1.5rem', null, '1rem', '1.25rem']}
+          py={['0.75rem', null, '1.5rem', null, '1rem', '1.25rem']}
         >
           <VStack
             h={['auto', null, '6.25rem', '5rem', '6.5rem', '7.5rem']}
@@ -104,13 +106,13 @@ const ServiceCard = ({
             <Heading {...h5Style}>{title}</Heading>
           </VStack>
           <VStack
-            h={['fit-content', null, '11.5rem', '14rem', '15.5rem', '16.25rem']}
+            h={['fit-content', null, '11.5rem', '14rem', '14rem', '16.25rem']}
             alignItems='flex-start'
             justifyContent={['space-around', null, 'space-between', null, null]}
             gap={['0.75rem', null, null, '0.5rem', null, null]}
           >
             <VStack
-              h={['auto', 'null', '9.25rem', '12rem', '13rem', '13.5rem']}
+              h={['auto', 'null', '9.25rem', '12rem', '12rem', '13.5rem']}
               alignItems='flex-start'
               justifyContent='space-between'
               gap={['0.75rem', null, '0', null, null]}
@@ -142,6 +144,8 @@ const ServiceCard = ({
                   background: '#faf9f6',
                 }}
                 boxShadow='none'
+                id='al'
+                ariaLabel='Кнопка, ведущая к разделу об услуге'
               />
             </HStack>
           </VStack>
@@ -187,7 +191,7 @@ const Services = () => {
           flexDir={['column', null, null, null, 'row']}
           justifyContent='space-between'
           alignItems='center'
-          gap={['1.5rem', null, null, null, null, '2rem']}
+          gap={['1.5rem', null, null, null, '1rem', '2rem']}
         >
           <ServiceCard
             imageSrc={Service1}

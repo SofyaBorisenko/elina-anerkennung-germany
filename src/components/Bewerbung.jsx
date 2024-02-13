@@ -109,6 +109,8 @@ const Bewerbung = () => {
       color: '#dd0000',
       border: '2px solid #dd0000',
     },
+    id: 'al',
+    ariaLabel: 'Кнопка, ведущая к контактной форме для заказа услуги',
   };
 
   return (

@@ -1,7 +1,7 @@
-import { Button, VStack, Box, Heading } from '@chakra-ui/react';
+import { Button, VStack, Box, Heading, Text } from '@chakra-ui/react';
 import '../App.scss';
-import HeroBg from '../assets/Hero_photo.jpg';
-import HeroBgMob from '../assets/Service1.jpg';
+import HeroBg from '../assets/Hero_photo.webp';
+import HeroBgMob from '../assets/Service1.webp';
 
 const Hero = () => {
   const handleClick = (id) => (event) => {
@@ -54,6 +54,8 @@ const Hero = () => {
       color: '#dd0000',
       border: '2px solid #dd0000',
     },
+    id: 'al',
+    ariaLabel: 'Кнопка, ведущая к услуге онлайн-консультации',
   };
 
   const h1Style = {
@@ -68,8 +70,7 @@ const Hero = () => {
     textTransform: 'uppercase',
   };
 
-  const h4Style = {
-    as: 'h4',
+  const textStyle = {
     maxWidth: ['60%', '70%'],
     marginTop: ['2rem', '1rem', '1.5rem', null, null, '2.5rem'],
     fontFamily: 'Manrope',
@@ -91,10 +92,10 @@ const Hero = () => {
               <br />и устойчивая интеграция
               <br /> <span className='highlighted-heading'>в Германии</span>
             </Heading>
-            <Heading as='h4' {...h4Style}>
+            <Text {...textStyle}>
               От тупика к ясности: настройте свой курс на профессиональный и
               учебный успех с моей поддержкой!
-            </Heading>
+            </Text>
             <Button {...buttonStyle}>
               Записаться на
               <br />
@@ -120,12 +121,12 @@ const Hero = () => {
             <br />и устойчивая интеграция
             <br /> <span className='highlighted-heading'>в Германии</span>
           </Heading>
-          <Heading as='h4' {...h4Style}>
+          <Text {...textStyle}>
             От тупика к ясности: настройте свой курс
             <br />
             на профессиональный и учебный успех
             <br />с моей поддержкой!
-          </Heading>
+          </Text>
           <Button {...buttonStyle}>
             Записаться
             <br />

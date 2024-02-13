@@ -11,7 +11,7 @@ import {
 import { PersonalSupportIcon } from './icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquareCheck } from '@fortawesome/free-regular-svg-icons';
-import PersonalSupportImage from '../assets/PersonalSupport.JPG';
+import PersonalSupportImage from '../assets/PersonalSupport.webp';
 import '../App.scss';
 
 const PersonalSupport = () => {
@@ -87,7 +87,9 @@ const PersonalSupport = () => {
             </Text>
           </VStack>
           <Image
+            loading='lazy'
             src={PersonalSupportImage}
+            alt='Фотография Элины в пиджаке мятного цвета за ноутбуком'
             w={['100%', '80%', '', null]}
             px={['0', null, '', null]}
             py={['2rem', '3rem', '', null]}
@@ -96,16 +98,17 @@ const PersonalSupport = () => {
           <HStack
             width={['100%', '80%', null, '70%']}
             gap={['1rem', null, null, '0']}
-            alignItems='center'
+            alignItems='flex-start'
             justifyContent='center'
             pb={['0', '1rem', null, '0']}
           >
-            <VStack w={['50%', null, '30%', '20%']} justifyContent='center'>
+            <VStack
+              w={['50%', null, '30%', '20%']}
+              pt={{ md: '5rem', '2xl': '8rem' }}
+              justifyContent='center'
+            >
               <FontAwesomeIcon icon={faSquareCheck} color='#dd0000' size='xl' />
-              <Heading {...h6Style}>
-                Поступление
-                <br />в штудиенколлег
-              </Heading>
+              <Heading {...h6Style}>Поступление в штудиенколлег</Heading>
               <Text {...textStyle}>
                 Стоимость:
                 <br />
@@ -115,13 +118,19 @@ const PersonalSupport = () => {
               </Text>
             </VStack>
             <Image
+              loading='lazy'
               src={PersonalSupportImage}
-              w={{ md: '20rem', '2xl': '26rem' }}
+              alt='Фотография Элины'
+              w={{ md: '22rem', '2xl': '26rem' }}
               px='3rem'
               mt='2rem'
               display={['none', null, 'block']}
             />
-            <VStack w={['50%', null, '30%', '20%']} justifyContent='center'>
+            <VStack
+              w={['50%', null, '30%', '20%']}
+              pt={{ md: '5rem', '2xl': '8rem' }}
+              justifyContent='center'
+            >
               <FontAwesomeIcon icon={faSquareCheck} color='#dd0000' size='xl' />
               <Heading {...h6Style}>
                 Трудоустройство <br />в Германии
@@ -132,6 +141,8 @@ const PersonalSupport = () => {
                 от 1000 евро до
                 <br />
                 2000 евро
+                <br />
+                (есть возможность рассрочки)
               </Text>
             </VStack>
           </HStack>
@@ -154,6 +165,8 @@ const PersonalSupport = () => {
             color: '#dd0000',
             border: '2px solid #dd0000',
           }}
+          id='al'
+          aria-label='Кнопка, ведущая к контактной форме для заказа услуги'
         >
           Приобрести сопровождение
         </Button>

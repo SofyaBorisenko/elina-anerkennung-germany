@@ -64,7 +64,12 @@ const Reviews = () => {
       gap='0'
     >
       <HStack justifyContent='space-between' alignItems='center' gap='0'>
-        <Button {...buttonStyle} onClick={prevPerson}>
+        <Button
+          {...buttonStyle}
+          onClick={prevPerson}
+          id='al'
+          aria-label='Кнопка переключения на предыдущий отзыв'
+        >
           <FaArrowLeft />
         </Button>
         <VStack maxW={{ base: '75%', '2xl': '60%' }} gap='0'>
@@ -85,7 +90,12 @@ const Reviews = () => {
             {location}
           </Text>
         </VStack>
-        <Button {...buttonStyle} onClick={nextPerson}>
+        <Button
+          {...buttonStyle}
+          onClick={nextPerson}
+          id='al'
+          aria-label='Кнопка переключения на следующий отзыв'
+        >
           <FaArrowRight />
         </Button>
       </HStack>

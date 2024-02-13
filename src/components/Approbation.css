@@ -6,7 +6,7 @@
         rgba(255, 255, 255, 0.7) 0%,
         rgba(255, 255, 255, 0.7) 100%
       ),
-      url('../assets/Approbation.jpg'), #faf9f6 50%;
+      url('../assets/Approbation.webp'), #faf9f6 50%;
     background-position: center;
     background-size: cover;
     position: sticky;

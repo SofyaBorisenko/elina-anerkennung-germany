@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Box, IconButton, Image, HStack, Link } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { useGlobalContext } from './Context';
-import DesktopLogo from '../assets/Logo_header_desktop.png';
-import MobileLogo from '../assets/Logo_header_mobile.png';
+import DesktopLogo from '../assets/Logo_header_desktop.webp';
+import MobileLogo from '../assets/Logo_header_mobile.webp';
 import '../App.scss';
 
 const Header = () => {
@@ -74,9 +74,20 @@ const Header = () => {
             icon={<HamburgerIcon />}
             fontSize={'2.25rem'}
             _hover={{ background: '#000' }}
+            id='al'
+            aria-label='Открыть боковое меню'
           />
-          <Link href='/' onClick={handleClick('hero-section')}>
-            <Image src={MobileLogo} maxW='8.75rem' />
+          <Link
+            href='/'
+            onClick={handleClick('hero-section')}
+            aria-label='Перейти наверх'
+          >
+            <Image
+              loading='lazy'
+              src={MobileLogo}
+              maxW='8.75rem'
+              alt='Мобильный логотип с названием сайта Elina Anerkennung Germany слева и кругом с флагом Германии справа'
+            />
           </Link>
         </HStack>
       </Box>
@@ -102,10 +113,16 @@ const Header = () => {
           h='100%'
           px={{ md: '2rem', lg: '4rem' }}
         >
-          <Link href='/' onClick={handleClick('hero-section')}>
+          <Link
+            href='/'
+            onClick={handleClick('hero-section')}
+            aria-label='Перейти наверх'
+          >
             <Image
+              loading='lazy'
               src={DesktopLogo}
               w={{ md: '16rem', lg: '20rem', '2xl': '24rem' }}
+              alt='Логотип с кругом с флагом Германии слева и названием сайта Elina Anerkennung Germany справа'
             />
           </Link>
           <nav>
@@ -117,6 +134,7 @@ const Header = () => {
                 href='#about-me'
                 onClick={handleClick('aboutme-section')}
                 {...navLinkStyle}
+                aria-label='Перейти к разделу "Обо мне"'
               >
                 Обо мне
               </Link>
@@ -124,6 +142,7 @@ const Header = () => {
                 href='#services'
                 onClick={handleClick('services-section')}
                 {...navLinkStyle}
+                aria-label='Перейти к разделу "Услуги"'
               >
                 Услуги
               </Link>
@@ -131,6 +150,7 @@ const Header = () => {
                 href='#reviews'
                 onClick={handleClick('reviews-section')}
                 {...navLinkStyle}
+                aria-label='Перейти к разделу "Отзывы"'
               >
                 Отзывы
               </Link>
@@ -138,6 +158,7 @@ const Header = () => {
                 href='#contact-me'
                 onClick={handleClick('contactme-section')}
                 {...navLinkStyle}
+                aria-label='Перейти к контактной форме'
               >
                 Связаться со мной
               </Link>

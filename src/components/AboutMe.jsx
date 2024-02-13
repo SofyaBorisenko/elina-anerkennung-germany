@@ -1,6 +1,6 @@
 import { Text, Box, Flex, Heading, Image, VStack } from '@chakra-ui/react';
 import '../App.scss';
-import AboutMePhoto from '../assets/AboutMe_photo.jpg';
+import AboutMePhoto from '../assets/AboutMe_photo.webp';
 
 const AboutMe = () => {
   const bgStyle = {
@@ -62,9 +62,11 @@ const AboutMe = () => {
             </Text>
           ))}
           <Image
+            loading='lazy'
             src={AboutMePhoto}
             display={['block', null, 'none']}
             mt='1rem'
+            alt='Фотография Элины в пиджаке мятного цвета, крупным планом'
           />
         </VStack>
       </Flex>

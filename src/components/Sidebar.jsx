@@ -19,17 +19,34 @@ const Sidebar = () => {
       <Box position='relative'>
         <nav className='sidebar-nav'>
           <VStack alignItems='flex-start' p='1rem' gap='1rem'>
-            <a href='#about-me' onClick={handleClick('aboutme-section')}>
+            <a
+              href='#about-me'
+              onClick={handleClick('aboutme-section')}
+              aria-label='Перейти к разделу "Обо мне"'
+            >
               Обо мне
             </a>
-            <a href='#services' onClick={handleClick('services-section')}>
+            <a
+              href='#services'
+              onClick={handleClick('services-section')}
+              aria-label='Перейти к разделу "Услуги"'
+            >
               Услуги
             </a>
-            <a href='#reviews' onClick={handleClick('reviews-section')}>
+            <a
+              href='#reviews'
+              onClick={handleClick('reviews-section')}
+              aria-label='Перейти к разделу "Отзывы"'
+            >
               Отзывы
             </a>
-            <a href='#contact-me' onClick={handleClick('contactme-section')}>
-              Связаться<br /> со мной
+            <a
+              href='#contact-me'
+              onClick={handleClick('contactme-section')}
+              aria-label='Перейти к контактной форме'
+            >
+              Связаться
+              <br /> со мной
             </a>
           </VStack>
         </nav>
@@ -44,6 +61,8 @@ const Sidebar = () => {
           right='0.25rem'
           fontSize='1.5rem'
           onClick={closeSidebar}
+          id='al'
+          aria-label='Кнопка закрытия бокового меню'
         >
           <FaTimes />
         </Button>

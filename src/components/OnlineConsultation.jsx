@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react';
 import '../App.scss';
 import { ConsultationIcon } from './icons';
-import PriceTag from '../assets/price_tag_1.png';
+import PriceTag from '../assets/price_tag_1.webp';
 
 const ConsultationCard = ({ title, listItems }) => (
   <Card
@@ -107,6 +107,8 @@ const OnlineConsultation = () => {
       color: '#dd0000',
       border: '2px solid #dd0000',
     },
+    id: 'al',
+    ariaLabel: 'Кнопка, ведущая к контактной форме для заказа услуги',
   };
 
   return (
@@ -132,6 +134,7 @@ const OnlineConsultation = () => {
         >
           <ConsultationIcon boxSize={[14, null, null, 16]} />
           <Image
+            loading='lazy'
             display={['flex', null, null, 'none']}
             src={PriceTag}
             alt='Цена: 60 евро'

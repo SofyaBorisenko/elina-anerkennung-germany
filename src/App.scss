@@ -64,22 +64,6 @@ p {
   color: $black;
 }
 
-h1,
-h2 {
-  font-family: 'Cormorant Infant';
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-  letter-spacing: -0.10875rem;
-  text-transform: uppercase;
-}
-
-h4 {
-  font-family: Manrope;
-  font-style: normal;
-  letter-spacing: -0.015px;
-}
-
 /*Sidebar*/
 .sidebar {
   position: fixed;
@@ -116,25 +100,6 @@ h4 {
 
 /* Styles for mobile screens */
 @media (min-width: 0px) {
-  button {
-    font-size: 0.75rem;
-  }
-
-  h1 {
-    font-size: 2.75rem;
-  }
-
-  h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.25rem;
-  }
-
-  h4 {
-    font-size: 1.15rem;
-    font-weight: 300;
-    line-height: 140%;
-  }
-
   .yellow-divider {
     height: 2rem;
   }
@@ -148,33 +113,6 @@ h4 {
 
 /* Styles for 1280px+ screens (XLarge) */
 @media (min-width: 1280px) {
-  button {
-    font-size: 1rem;
-  }
-
-  .highlighted-heading {
-    max-width: 30rem;
-  }
-
-  h1 {
-    font-size: 3.375rem;
-  }
-
-  h2 {
-    font-size: 3rem;
-  }
-
-  h4 {
-    font-size: 1.275rem;
-    font-weight: 500;
-    line-height: 120%;
-  }
-
-  select {
-    width: 100%;
-    margin: 0;
-  }
-
   .yellow-divider {
     height: 3rem;
   }

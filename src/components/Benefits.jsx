@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, HStack, Text, VStack } from '@chakra-ui/react';
 import { CheckIcon } from '@chakra-ui/icons';
-import BenefitsBg from '../assets/Benefits.JPG';
+import BenefitsBg from '../assets/Benefits.webp';
 import '../App.scss';
 
 const BenefitItem = ({ title, description }) => (

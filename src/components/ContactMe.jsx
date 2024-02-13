@@ -170,6 +170,7 @@ const ContactMe = () => {
       color: '#dd0000',
       border: '2px solid #dd0000',
     },
+    ariaLabel: 'Отправить заявку',
   };
 
   const [resize, setResize] = React.useState('vertical');
@@ -212,6 +213,7 @@ const ContactMe = () => {
                     {...inputStyle}
                     _placeholder={placeholderStyle}
                     {...formik.getFieldProps('firstName')}
+                    autoComplete='given-name'
                   />
                   <FormErrorMessage {...errorStyle}>
                     {formik.errors.firstName}
@@ -232,6 +234,7 @@ const ContactMe = () => {
                     {...inputStyle}
                     _placeholder={placeholderStyle}
                     {...formik.getFieldProps('lastName')}
+                    autoComplete='family-name'
                   />
                   <FormErrorMessage {...errorStyle}>
                     {formik.errors.lastName}
@@ -258,6 +261,7 @@ const ContactMe = () => {
                     {...inputStyle}
                     _placeholder={placeholderStyle}
                     {...formik.getFieldProps('email')}
+                    autoComplete='email'
                   />
                   <FormErrorMessage {...errorStyle}>
                     {formik.errors.email}
@@ -277,6 +281,7 @@ const ContactMe = () => {
                     {...inputStyle}
                     _placeholder={placeholderStyle}
                     {...formik.getFieldProps('phone')}
+                    autoComplete='tel'
                   />
                   <FormErrorMessage {...errorStyle}>
                     {formik.errors.phone}

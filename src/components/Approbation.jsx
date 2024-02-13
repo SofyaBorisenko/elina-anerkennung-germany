@@ -12,8 +12,8 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { ApprobationIcon } from './icons';
-import PriceTag from '../assets/price_tag_2.png';
-import '../assets/Approbation.JPG';
+import PriceTag from '../assets/price_tag_2.webp';
+import '../assets/Approbation.webp';
 import '../App.scss';
 import './Approbation.css';
 
@@ -197,6 +197,8 @@ const Approbation = () => {
       color: '#dd0000',
       border: '2px solid #dd0000',
     },
+    id: 'al',
+    ariaLabel: 'Кнопка, ведущая к контактной форме для заказа услуги',
   };
 
   return (
@@ -239,6 +241,7 @@ const Approbation = () => {
                 >
                   <ApprobationIcon boxSize={[14, null, null, 16]} />
                   <Image
+                    loading='lazy'
                     display={['flex', null, null, 'none']}
                     src={PriceTag}
                     alt='Цена: 250 евро'
@@ -251,6 +254,7 @@ const Approbation = () => {
                 </Heading>
               </VStack>
               <Image
+                loading='lazy'
                 display={['none', null, null, 'flex']}
                 src={PriceTag}
                 alt='Цена: 250 евро'
